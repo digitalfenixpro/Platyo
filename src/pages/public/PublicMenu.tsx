@@ -160,7 +160,7 @@ export const PublicMenu: React.FC = () => {
     >
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       <div
-        className="absolute top-0 left-0 w-[500px] h-[500px] opacity-80 pointer-events-none"
+        className="absolute top-0 left-0 w-[500px] h-[500px] opacity-0 pointer-events-none"
         style={{
           background: primaryColor,
           borderBottomRightRadius: '50% 40%',
