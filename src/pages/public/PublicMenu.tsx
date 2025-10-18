@@ -343,6 +343,7 @@ export const PublicMenu: React.FC = () => {
                           src={product.images[0]}
                           alt={product.name}
                           className="w-80 h-80 object-cover  shadow-2xl"
+                          style={{`border-radius:10px` }}
                         />
                         {isCenter && (
                           <div className="mt-6 bg-white rounded-lg shadow-xl px-8 py-4 max-w-xs">
