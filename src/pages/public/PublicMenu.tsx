@@ -396,7 +396,7 @@ export const PublicMenu: React.FC = () => {
                   <ChevronRight className="w-6 h-6" style={{ color: textColor }} />
                 </button>
 
-                <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
+                <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-5">
                   {featuredProducts.map((_, index) => (
                     <button
                       key={index}
