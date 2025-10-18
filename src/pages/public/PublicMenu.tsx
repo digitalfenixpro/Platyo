@@ -785,11 +785,11 @@ export const PublicMenu: React.FC = () => {
 
       {/* FLOATING FOOTER BAR */}
       <div
-        className="fixed bottom-2 left-0 right-0 shadow-lg z-40 rounded-xl"
+        className="fixed bottom-1 left-0 right-0 shadow-lg z-40 rounded-xl p-5"
         style={{ backgroundColor: primaryColor }}
       >
         <div className="max-w-7xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between gap-4 flex-wrap">
+          <div className="flex items-center justify-between gap-4 flex-wrap ">
             <div className="flex items-center gap-2 text-sm">
               <MapPin className="w-4 h-4 text-gray-800" />
               <span className="font-medium text-gray-800" style={{ fontFamily: theme.primary_font || 'Inter' }}>
