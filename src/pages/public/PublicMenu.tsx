@@ -317,7 +317,7 @@ export const PublicMenu: React.FC = () => {
           </div>
 
           <div className="relative h-[450px]">
-            <div className="absolute inset-0 flex items-left justify-center">
+            <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
                 {featuredProducts.map((product, index) => {
                   const offset = index - featuredSlideIndex;
