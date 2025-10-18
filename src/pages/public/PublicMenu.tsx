@@ -338,11 +338,11 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="  flex flex-col items-center rounded-lg bg-white rounded-lg shadow-xl px-10 py-4">
+                      <div className="relative flex flex-col items-center rounded-lg bg-white rounded-lg shadow-xl px-10 py-4">
                         <img
                           src={product.images[0]}
                           alt={product.name}
-                          className="w-200 h-200 object-cover rounded-lg  shadow-2xl"
+                          className="w-80 h-80 object-cover rounded-lg  shadow-2xl"
                         />
                         {isCenter && (
                           <div className="mt-6 ">
