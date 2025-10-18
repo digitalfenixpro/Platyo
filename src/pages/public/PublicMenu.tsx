@@ -292,7 +292,7 @@ export const PublicMenu: React.FC = () => {
         <section className="max-w-7xl mx-auto px-20 py-16 relative z-30">
           <div className="text-left mb-12">
             <p
-              className="text-sm mb-2 opacity-70"
+              className="text-xl mb-2 opacity-70"
               style={{
                 color: textColor,
                 fontFamily: theme.primary_font || 'Inter'
