@@ -188,7 +188,7 @@ export const PublicMenu: React.FC = () => {
           fill={primaryColor}
         />
       </svg>
-
+      {/*  
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-80 pointer-events-none"
         style={{
@@ -198,6 +198,7 @@ export const PublicMenu: React.FC = () => {
           transform: 'translate(25%, 25%)',
         }}
       />
+      */}
 
       {/* HEADER */}
       <header className="sticky top-0 z-50 relative bg-white/30 backdrop-blur-md">
