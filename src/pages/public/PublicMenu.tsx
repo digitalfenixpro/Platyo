@@ -379,7 +379,7 @@ export const PublicMenu: React.FC = () => {
               <>
                 <button
                   onClick={prevSlide}
-                  className="absolute -left-20 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-20"
+                  className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-20"
                   style={{
                     borderRadius: theme.button_style === 'rounded' ? '9999px' : '0.5rem'
                   }}
