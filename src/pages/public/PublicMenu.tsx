@@ -161,10 +161,10 @@ export const PublicMenu: React.FC = () => {
     >
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       <svg
-        className="absolute top-20 left-10 w-[600px] h-[700px] pointer-events-none"
+        className="absolute top-0 left-0 w-[800px] h-[800px] pointer-events-none"
         style={{
           opacity: 0.8, // antes estaba en className como opacity-80
-          transform: 'translate(-20%, -20%)',
+          /*transform: 'translate(-20%, -20%)',*/
           borderBottomRightRadius: '50% 40%',
           borderTopRightRadius: '0% 0%',
         }}
