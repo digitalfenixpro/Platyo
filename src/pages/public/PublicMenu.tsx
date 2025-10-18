@@ -290,12 +290,12 @@ export const PublicMenu: React.FC = () => {
       {/* FEATURED SECTION SLIDER */}
       {featuredProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 py-16 relative z-30">
-          <div className="text-left mb-25">
+          <div className="text-left mb-12">
             <p
               className="text-sm mb-2 opacity-70"
               style={{
                 color: textColor,
-                fontFamily: theme.primary_font || 'Inter',
+                fontFamily: theme.primary_font || 'Inter'
               }}
             >
               Te presentamos nuestros
@@ -309,7 +309,7 @@ export const PublicMenu: React.FC = () => {
             >
               destacados
             </h2>
-            <div className="flex items-center justify-left gap-1">
+            <div className="flex items-center justify-center gap-1">
               {[1,2,3,4,5].map(i => (
                 <Star key={i} className="w-5 h-5 fill-current" style={{ color: accentColor }} />
               ))}
@@ -338,7 +338,7 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="relative flex flex-col items-center bg-white shadow-md p-4 w-64 mx-auto">
+                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4 w-64 mx-auto">
                         <img
                           src={product.images[0]}
                           alt={product.name}
