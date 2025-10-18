@@ -160,16 +160,22 @@ export const PublicMenu: React.FC = () => {
       } as React.CSSProperties}
     >
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
-      <div
-        className="absolute top-0 left-0 w-[500px] h-[500px] opacity-0 pointer-events-none"
+      <svg
+        className="absolute top-0 left-0 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background: primaryColor,
+          opacity: 0.8, // antes estaba en className como opacity-80
+          transform: 'translate(-20%, -20%)',
           borderBottomRightRadius: '50% 40%',
           borderTopRightRadius: '0% 0%',
-          transform: 'translate(-20%, -20%)',
         }}
-        <LeftBlob color="#FFC800" width={300} height={600} />
-      />
+        viewBox="0 0 285 538"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0C45 25 120 25 160 50C200 75 205 140 180 200C155 260 160 320 165 380C170 440 160 520 70 538C30 545 10 520 0 515V0Z"
+          fill={primaryColor}
+        />
+      </svg>
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-80 pointer-events-none"
         style={{
