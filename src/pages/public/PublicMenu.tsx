@@ -595,7 +595,7 @@ export const PublicMenu: React.FC = () => {
                     <img
                       src={product.images[0]}
                       alt={product.name}
-                      className="w-24 h-24 object-cover rounded-full flex-shrink-0"
+                      className="w-24 h-24 object-cover  flex-shrink-0"
                     />
                   )}
                   <div className="flex-1 min-w-0">
