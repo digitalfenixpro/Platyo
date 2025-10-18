@@ -338,7 +338,7 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4 w-64 mx-auto">
+                      <div className="relative flex flex-col items-center bg-white shadow-md p-4 w-64 mx-auto">
                         <img
                           src={product.images[0]}
                           alt={product.name}
