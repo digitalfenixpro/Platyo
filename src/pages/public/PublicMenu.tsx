@@ -295,7 +295,8 @@ export const PublicMenu: React.FC = () => {
               className="text-sm mb-2 opacity-70"
               style={{
                 color: textColor,
-                fontFamily: theme.primary_font
+                fontFamily: theme.primary_font || 'Inter',
+                padding: '20px'
               }}
             >
               Te presentamos nuestros
