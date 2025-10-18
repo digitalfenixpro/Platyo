@@ -788,7 +788,7 @@ export const PublicMenu: React.FC = () => {
         className="fixed bottom-1 left-0 right-0 shadow-lg z-40 rounded-xl p-1"
         style={{ backgroundColor: primaryColor }}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3">
+        <div className="max-w-7xl mx-auto px-5 py-3">
           <div className="flex items-center justify-between gap-4 flex-wrap ">
             <div className="flex items-center gap-2 text-sm">
               <MapPin className="w-4 h-4 text-gray-800" />
