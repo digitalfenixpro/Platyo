@@ -201,7 +201,7 @@ export const PublicMenu: React.FC = () => {
       */}
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 relative bg-white/30">
+      <header className="sticky top-0 z-50 relative">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
