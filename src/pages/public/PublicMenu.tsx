@@ -171,10 +171,7 @@ export const PublicMenu: React.FC = () => {
         viewBox="0 0 285 538"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M0 0C45 25 120 25 160 50C200 75 205 140 180 200C155 260 160 320 165 380C170 440 160 520 70 538C30 545 10 520 0 515V0Z"
-          fill={primaryColor}
-        />
+        <path fill={primaryColor} d="M26.5,-2.6C34.5,16.1,41.3,41.1,27.3,55.6C13.2,70,-21.6,73.8,-37.9,60.1C-54.3,46.3,-52.2,15,-42.8,-5.5C-33.4,-26,-16.7,-35.8,-3.7,-34.6C9.2,-33.4,18.5,-21.2,26.5,-2.6Z" transform="translate(100 100)" />
       </svg>
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-80 pointer-events-none"
