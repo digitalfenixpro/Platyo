@@ -7,6 +7,7 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
+import LeftBlob from './LeftBlob';
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -167,6 +168,7 @@ export const PublicMenu: React.FC = () => {
           borderTopRightRadius: '0% 0%',
           transform: 'translate(-20%, -20%)',
         }}
+        <LeftBlob color="#FFC800" width={300} height={600} />
       />
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-80 pointer-events-none"
