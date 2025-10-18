@@ -291,7 +291,6 @@ export const PublicMenu: React.FC = () => {
       {featuredProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 py-16 relative z-30">
           <div className="text-left mb-12">
-            style={{padding: '20px'}}
             <p
               className="text-sm mb-2 opacity-70"
               style={{
