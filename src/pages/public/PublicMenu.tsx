@@ -161,8 +161,8 @@ export const PublicMenu: React.FC = () => {
         '--primary-font': theme.primary_font || 'Poppins',
         '--secondary-font': theme.secondary_font || 'Poppins',
       } as React.CSSProperties}
-      <LeftShape color={primaryColor} />
     >
+      <LeftShape color={primaryColor} />
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       <svg
         className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none"
