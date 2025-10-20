@@ -7,9 +7,8 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
-import LeftBlob from './LeftBlob';
+/*import LeftBlob from './LeftBlob';
 /*import {LeftShape} from '../../components/svg/LeftShape';*/
-/*import {RightShape} from '../../components/svg/RightShape';*/
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
