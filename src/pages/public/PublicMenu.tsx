@@ -213,16 +213,7 @@ export const PublicMenu: React.FC = () => {
         }}
       />
       */}
-      <div className="relative">
-        <LeftShape color={primaryColor} />
-        <RightShape
-          color={primaryColor}
-          className="
-            bottom-0 left-1/2 -translate-x-1/2 translate-y-0
-            sm:top-20 sm:right-0 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
-          "
-        />
-      </div>
+
 
       {/* HEADER */}
       <header className="sticky top-0 z-50 ">
