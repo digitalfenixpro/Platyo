@@ -204,17 +204,7 @@ export const PublicMenu: React.FC = () => {
           fill={primaryColor}
         />
       </svg>
-      {/* DF: DEJAR ESTO COMENTADO 
-      <div
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-80 pointer-events-none"
-        style={{
-          background: primaryColor,
-          borderTopLeftRadius: '60% 50%',
-          borderBottomLeftRadius: '0% 0%',
-          transform: 'translate(25%, 25%)',
-        }}
-      />
-      */}
+
 
 
       {/* HEADER */}
