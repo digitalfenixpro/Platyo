@@ -355,7 +355,7 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  "> /* DF: se le agrega este codigo para darle un borde redondeado y darle un fondo blanco a a la tarjeta*/
+                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  "> 
                         <img
                           src={product.images[0]}
                           alt={product.name}
