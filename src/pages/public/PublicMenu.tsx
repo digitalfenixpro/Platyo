@@ -158,7 +158,7 @@ export const PublicMenu: React.FC = () => {
         '--secondary-color': secondaryColor,
         '--accent-color': accentColor,
         '--text-color': textColor,
-        '--primary-font': theme.primary_font || 'Poppins',
+        '--primary-font': theme.primary_font || 'Inter',
         '--secondary-font': theme.secondary_font || 'Poppins',
       } as React.CSSProperties}
     >
