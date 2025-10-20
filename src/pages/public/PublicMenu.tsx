@@ -164,6 +164,7 @@ export const PublicMenu: React.FC = () => {
     >
       {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
+      {/*SE AGREGARON TODOS LOS SVG*/}
       <svg
         className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none"
         style={{
@@ -203,7 +204,7 @@ export const PublicMenu: React.FC = () => {
           fill={primaryColor}
         />
       </svg>
-      {/*  
+      {/* DF: DEJAR ESTO COMENTADO 
       <div
         className="absolute bottom-0 right-0 w-[600px] h-[600px] opacity-80 pointer-events-none"
         style={{
@@ -354,7 +355,7 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  "> {/* se le agrega este codigo para darle un borde redondeado y darle un fondo blanco a a la tarjeta*/}
+                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  "> {/* DF: se le agrega este codigo para darle un borde redondeado y darle un fondo blanco a a la tarjeta*/}
                         <img
                           src={product.images[0]}
                           alt={product.name}
@@ -600,7 +601,7 @@ export const PublicMenu: React.FC = () => {
                     <img
                       src={product.images[0]}
                       alt={product.name}
-                      className="w-24 h-24 object-cover rounded-xl flex-shrink-0 "
+                      className="w-24 h-24 object-cover rounded-xl flex-shrink-0 " {/*DF: agregue el rounded-xl para que se vea cuadrada la imagen*/}
                     />
                   )}
                   <div className="flex-1 min-w-0">
