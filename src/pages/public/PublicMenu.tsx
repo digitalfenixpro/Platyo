@@ -8,8 +8,8 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import LeftBlob from './LeftBlob';
-import LeftShape from "@/components/svg/LeftShape";
-import RightShape from "@/components/svg/RightShape";
+import LeftShape from '../../components/svg/LeftShape';
+import RightShape from '../../components/svg/RightShape';
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -158,7 +158,7 @@ export const PublicMenu: React.FC = () => {
         '--secondary-color': secondaryColor,
         '--accent-color': accentColor,
         '--text-color': textColor,
-        '--primary-font': theme.primary_font || 'Inter',
+        '--primary-font': theme.primary_font || 'Poppins',
         '--secondary-font': theme.secondary_font || 'Poppins',
       } as React.CSSProperties}
       <LeftShape color={primaryColor} />
