@@ -8,8 +8,8 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import LeftBlob from './LeftBlob';
-import {LeftShape} from '../../components/svg/LeftShape';
-import {RightShape} from '../../components/svg/RightShape';
+/*import {LeftShape} from '../../components/svg/LeftShape';*/
+/*import {RightShape} from '../../components/svg/RightShape';*/
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -162,7 +162,7 @@ export const PublicMenu: React.FC = () => {
         '--secondary-font': theme.secondary_font || 'Poppins',
       } as React.CSSProperties}
     >
-      <LeftShape color={primaryColor} />
+      {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       <svg
         className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none"
