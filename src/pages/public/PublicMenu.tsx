@@ -28,7 +28,6 @@ export const PublicMenu: React.FC = () => {
   const [featuredSlideIndex, setFeaturedSlideIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | 'editorial'>('list');
   const [showHoursModal, setShowHoursModal] = useState(false);
-  const primaryColor = "#6C63FF"; // o donde definas tu color
   
   const loadMenuData = () => {
     try {
