@@ -9,6 +9,7 @@ import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 /*import LeftBlob from './LeftBlob';
 /*import {LeftShape} from '../../components/svg/LeftShape';*/
+/*import {RightShape} from '../../components/svg/RightShape';*/
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -353,7 +354,7 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  ">
+                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  "> {/* se le agrega este codigo para darle un borde redondeado y darle un fondo blanco a a la tarjeta*/}
                         <img
                           src={product.images[0]}
                           alt={product.name}
@@ -800,7 +801,7 @@ export const PublicMenu: React.FC = () => {
 
       {/* FLOATING FOOTER BAR */}
       <div
-        className="fixed bottom-1 left-2 right-2 shadow-lg z-40 rounded-xl p-1 backdrop-blur-md border border-white/30"
+        className="fixed bottom-1 left-2 right-2 shadow-lg z-40 rounded-xl p-1 backdrop-blur-md border border-white/30" /* se le agregar este codigo para los bordes redondeados y padding a los lados*/
         style={{ backgroundColor: primaryColor }}
       >
         <div className="max-w-7xl mx-auto px-5 py-3">
