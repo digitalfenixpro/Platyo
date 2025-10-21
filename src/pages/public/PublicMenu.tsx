@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Search, Gift, Star, X, ChevronLeft, ChevronRight, Grid3x3, List, Clock, MapPin, Facebook, Instagram, Phone } from 'lucide-react';
+import { ShoppingCart, Search, Gift, Star, X, ChevronLeft, ChevronRight, Grid3x3, List, Clock, MapPin, Facebook, Instagram, Phone, AlignLeft } from 'lucide-react';
 import { useParams } from 'react-router-dom';
 import { Category, Product, Restaurant, Subscription } from '../../types';
 import { loadFromStorage } from '../../data/mockData';
@@ -7,9 +7,6 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
-/*import LeftBlob from './LeftBlob';
-/*import {LeftShape} from '../../components/svg/LeftShape';*/
-/*import {RightShape} from '../../components/svg/RightShape';*/
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -28,7 +25,7 @@ export const PublicMenu: React.FC = () => {
   const [featuredSlideIndex, setFeaturedSlideIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | 'editorial'>('list');
   const [showHoursModal, setShowHoursModal] = useState(false);
-  
+
   const loadMenuData = () => {
     try {
       setLoading(true);
@@ -72,7 +69,6 @@ export const PublicMenu: React.FC = () => {
       setError('Error al cargar el menú');
       setLoading(false);
     }
-    
   };
 
   useEffect(() => {
@@ -146,23 +142,37 @@ export const PublicMenu: React.FC = () => {
   const theme = restaurant.settings.theme;
   const primaryColor = theme.primary_color || '#FFC700';
   const secondaryColor = theme.secondary_color || '#f3f4f6';
-  const accentColor = theme.accent_color || '#FFC700';
-  const textColor = theme.text_color || '#1f2937';
+  const menuBackgroundColor = theme.menu_background_color || '#ffffff';
+  const cardBackgroundColor = theme.card_background_color || '#f9fafb';
+  const primaryTextColor = theme.primary_text_color || '#111827';
+  const secondaryTextColor = theme.secondary_text_color || '#6b7280';
+  const textColor = theme.primary_text_color || '#111827';
   const hasPromo = restaurant.settings.promo?.enabled && restaurant.settings.promo?.vertical_promo_image;
 
   return (
     <div
-      className="min-h-screen bg-gray-50 relative overflow-hidden"
+      className="min-h-screen relative overflow-hidden"
       style={{
+        backgroundColor: menuBackgroundColor,
         '--primary-color': primaryColor,
         '--secondary-color': secondaryColor,
-        '--accent-color': accentColor,
+        '--menu-bg-color': menuBackgroundColor,
+        '--card-bg-color': cardBackgroundColor,
+        '--primary-text-color': primaryTextColor,
+        '--secondary-text-color': secondaryTextColor,
         '--text-color': textColor,
         '--primary-font': theme.primary_font || 'Inter',
         '--secondary-font': theme.secondary_font || 'Poppins',
       } as React.CSSProperties}
     >
-      {/*<LeftShape color={primaryColor} />*/}
+      <style>{`
+        p, span { color: ${primaryTextColor} !important; }
+
+        
+
+      `}</style>
+
+            {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       {/*SE AGREGARON TODOS LOS SVG*/}
       <svg
@@ -205,16 +215,20 @@ export const PublicMenu: React.FC = () => {
         />
       </svg>
 
-
-
       {/* HEADER */}
-      <header className="sticky top-0 z-50 ">
+      <header className="sticky top-0 z-50 relative bg-white/30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
-            <div className="flex-1 max-w-xs">
+             <div className="flex-1 max-w-xs">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                {/* Icono de lupa */}
+                <Search
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
+                  style={{ color: primaryTextColor, stroke: primaryTextColor }}
+                />
+            
+                {/* Input */}
                 <input
                   type="text"
                   placeholder="Buscar..."
@@ -223,17 +237,34 @@ export const PublicMenu: React.FC = () => {
                     setSearchTerm(e.target.value);
                     if (e.target.value) {
                       setTimeout(() => {
-                        document.getElementById('products-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        document
+                          .getElementById('products-section')
+                          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                       }, 100);
                     }
                   }}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:outline-none bg-gray-50"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:outline-none transition-colors placeholder-opacity-70 custom-placeholder"
                   style={{
-                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-                    /*border: `1px solid ${primaryColor}`,*/
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)'
+                    backgroundColor: cardBackgroundColor,
+                    borderColor: cardBackgroundColor,
+                    borderWidth: '1px',
+                    borderStyle: 'solid',
+                    borderRadius:
+                      theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                    color: primaryTextColor,
+                    caretColor: primaryTextColor,
                   }}
+                  onFocus={(e) => (e.target.style.borderColor = primaryTextColor)}
+                  onBlur={(e) => (e.target.style.borderColor = cardBackgroundColor)}
                 />
+            
+                {/* CSS dinámico para el placeholder */}
+                <style>{`
+                  .custom-placeholder::placeholder {
+                    color: ${primaryTextColor} !important;
+                    opacity: 0.7;
+                  }
+                `}</style>
               </div>
             </div>
 
@@ -261,29 +292,49 @@ export const PublicMenu: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex items-center gap-2 flex-1 justify-end max-w-xs">
               {hasPromo && (
-                <button
-                  onClick={() => setShowPromoModal(true)}
-                  className="p-3 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
-                  style={{
-                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem'
-                  }}
-                >
-                  <Gift className="w-5 h-5 text-gray-600" />
-                </button>
+<button
+  onClick={() => setShowPromoModal(true)}
+  className="p-3 rounded-lg border transition-colors relative hover:opacity-90"
+  style={{
+    backgroundColor: cardBackgroundColor,
+    borderColor: cardBackgroundColor,
+    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+  }}
+>
+  <Gift
+    className="w-5 h-5"
+    style={{
+      color: textColor,
+    }}
+  />
+  <span
+    style={{
+      position: 'absolute',
+      top: '-4px',       // antes 6px → negativo para que quede encima del borde
+      right: '-4px',     // antes 6px → negativo para que sobresalga del borde
+      width: '15px',
+      height: '15px',
+      backgroundColor: secondaryColor,
+      borderRadius: '50%',
+      boxShadow: '0 0 0 2px white', // opcional: halo blanco para destacar
+    }}
+  />
+</button>
               )}
               <button
                 onClick={() => setShowCart(true)}
-                className="p-3 rounded-lg border border-gray-200 hover:opacity-90 transition-colors relative"
+                className="p-3 rounded-lg border hover:opacity-90 transition-colors relative"
                 style={{
-                  backgroundColor: 'white',
-                  borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem'
+                  backgroundColor: cardBackgroundColor,
+                  borderColor: cardBackgroundColor,
+                  borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
                 }}
               >
-                <ShoppingCart className="w-5 h-5 text-gray-600" />
+                <ShoppingCart className="w-5 h-5" style={{ color: primaryTextColor, stroke: primaryTextColor }} />
                 {cartItemsCount > 0 && (
                   <span
                     className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                    style={{ backgroundColor: primaryColor }}
+                    style={{ backgroundColor: secondaryColor }}
                   >
                     {cartItemsCount}
                   </span>
@@ -296,10 +347,10 @@ export const PublicMenu: React.FC = () => {
 
       {/* FEATURED SECTION SLIDER */}
       {featuredProducts.length > 0 && (
-        <section className="sm: max-w-7xl mx-auto px-20 py-16 relative z-30">
-          <div className="text-left mb-12">
+        <section className="max-w-7xl mx-auto px-4 py-16 relative z-30">
+          <div className="text-center mb-12">
             <p
-              className="text-xl mb-2 opacity-70"
+              className="text-sm mb-2 opacity-70"
               style={{
                 color: textColor,
                 fontFamily: theme.primary_font || 'Inter'
@@ -316,9 +367,9 @@ export const PublicMenu: React.FC = () => {
             >
               destacados
             </h2>
-            <div className="flex items-left justify-left gap-1">
+            <div className="flex items-center justify-center gap-1">
               {[1,2,3,4,5].map(i => (
-                <Star key={i} className="w-5 h-5 fill-current" style={{ color: accentColor }} />
+                <Star key={i} className="w-5 h-5 fill-current" style={{ color: primaryColor }} />
               ))}
             </div>
           </div>
@@ -345,19 +396,32 @@ export const PublicMenu: React.FC = () => {
                       }}
                       onClick={() => isCenter && setSelectedProduct(product)}
                     >
-                      <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4  "> 
+                    <div
+                      className="relative flex flex-col items-center rounded-2xl shadow-md p-4"
+                      style={{
+                        backgroundColor: cardBackgroundColor,
+                      }}
+                    >
                         <img
                           src={product.images[0]}
                           alt={product.name}
                           className="w-80 h-80 object-cover rounded-lg "
+                            style={{
+                              backgroundColor: cardBackgroundColor,
+                            }}
                         />
                         {isCenter && (
-                          <div className="mt-6 ">
+                          <div
+                            className="mt-6 px-8 py-4 max-w-xs"
+                            style={{
+                              backgroundColor: cardBackgroundColor,
+                            }}
+                          >
                             <p
                               className="font-bold text-center text-lg"
                               style={{
-                                color: textColor,
-                                fontFamily: theme.secondary_font || 'Poppins'
+                            fontFamily: theme.secondary_font || 'Poppins',
+                            cssText: `color: ${primaryTextColor} !important;`
                               }}
                             >
                               {product.name}
@@ -377,7 +441,8 @@ export const PublicMenu: React.FC = () => {
                   onClick={prevSlide}
                   className="absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-20" /*DF: CAMBIO DE BOTONES EN MOVIL*/
                   style={{
-                    borderRadius: theme.button_style === 'rounded' ? '9999px' : '0.5rem'
+                    backgroundColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '9999px' : '0.5rem',
                   }}
                 >
                   <ChevronLeft className="w-6 h-6" style={{ color: textColor }} />
@@ -386,20 +451,21 @@ export const PublicMenu: React.FC = () => {
                   onClick={nextSlide}
                   className="absolute -right-10 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-20"
                   style={{
-                    borderRadius: theme.button_style === 'rounded' ? '9999px' : '0.5rem'
+                    backgroundColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '9999px' : '0.5rem',
                   }}
                 >
                   <ChevronRight className="w-6 h-6" style={{ color: textColor }} />
                 </button>
 
-                <div className="absolute -bottom-8 left-0 top-10 right-0 flex justify-center gap-2">
+                <div className="absolute -bottom-8 left-0 right-0 flex justify-center gap-2">
                   {featuredProducts.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setFeaturedSlideIndex(index)}
                       className="w-2 h-2 rounded-full transition-all"
                       style={{
-                        backgroundColor: index === featuredSlideIndex ? accentColor : '#d1d5db',
+                        backgroundColor: index === featuredSlideIndex ? primaryColor : primaryTextColor,
                         width: index === featuredSlideIndex ? '24px' : '8px',
                       }}
                     />
@@ -410,21 +476,18 @@ export const PublicMenu: React.FC = () => {
           </div>
         </section>
       )}
-      
-      
-      
 
       {/* CATEGORIES TABS - CENTERED */}
       <div className="relative z-20" >
         <div className="max-w-7xl mx-auto px-4 py-4 relative">
-          <div className="flex gap-1 overflow-x-auto scrollbar-hide justify-center">
+          <div className="flex gap-3 overflow-x-auto scrollbar-hide justify-center">
             <button
               onClick={() => setSelectedCategory('all')}
               className="px-6 py-2.5 whitespace-nowrap transition-all font-medium text-sm"
               style={{
-                backgroundColor: selectedCategory === 'all' ? 'white' : 'transparent',
-                color: selectedCategory === 'all' ? textColor : '#000',
-                border: `2px solid ${selectedCategory === 'all' ? 'white' : 'transparent'}`,
+                backgroundColor: selectedCategory === 'all' ? primaryColor : 'transparent',
+                color: selectedCategory === 'all' ? secondaryTextColor : textColor,
+                border: `1px solid ${primaryColor}`,
                 borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
                 fontFamily: theme.primary_font || 'Inter'
               }}
@@ -437,15 +500,16 @@ export const PublicMenu: React.FC = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className="px-6 py-2.5 whitespace-nowrap transition-all font-medium text-sm"
                 style={{
-                  backgroundColor: selectedCategory === category.id ? 'white' : 'transparent',
-                  color: selectedCategory === category.id ? textColor : '#000',
-                  borderColor: selectedCategory === category.id ? primaryColor : 'transparent',
+                  backgroundColor: selectedCategory === category.id ? primaryColor : 'transparent',
+                  color: selectedCategory === category.id ? secondaryTextColor : textColor,
+                  border: `1px solid ${primaryColor}`,
                   borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
                   fontFamily: theme.primary_font || 'Inter'
                 }}
               >
                 {category.name}
               </button>
+
             ))}
           </div>
         </div>
@@ -460,21 +524,21 @@ export const PublicMenu: React.FC = () => {
             className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white shadow-md' : 'bg-white/50'}`}
             style={{ borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem' }}
           >
-            <List className="w-5 h-5" style={{ color: viewMode === 'list' ? accentColor : textColor }} />
+            <List className="w-5 h-5" style={{ color: viewMode === 'list' ? primaryColor : textColor }} />
           </button>
           <button
             onClick={() => setViewMode('grid')}
             className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-white shadow-md' : 'bg-white/50'}`}
             style={{ borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem' }}
           >
-            <Grid3x3 className="w-5 h-5" style={{ color: viewMode === 'grid' ? accentColor : textColor }} />
+            <Grid3x3 className="w-5 h-5" style={{ color: viewMode === 'grid' ? primaryColor : textColor }} />
           </button>
           <button
             onClick={() => setViewMode('editorial')}
-            className={`p-2 px-4 rounded-lg transition-all flex items-center gap-2 ${viewMode === 'editorial' ? 'bg-white shadow-md' : 'bg-white/50'}`}
+            className={`p-2 rounded-lg transition-all flex items-center gap-2 ${viewMode === 'editorial' ? 'bg-white shadow-md' : 'bg-white/50'}`}
             style={{ borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem' }}
           >
-            <span className="text-sm font-medium" style={{ color: viewMode === 'editorial' ? accentColor : textColor }}>Editorial</span>
+            <AlignLeft className="w-5 h-5" style={{ color: viewMode === 'editorial' ? primaryColor : textColor }} />
           </button>
         </div>
 
@@ -499,9 +563,12 @@ export const PublicMenu: React.FC = () => {
                 return (
                   <div
                     key={product.id}
-                    className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden"
+                    className="rounded-xl shadow-sm hover:shadow-lg transition-all cursor-pointer overflow-hidden"
                     onClick={() => setSelectedProduct(product)}
-                    style={{ borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem' }}
+                    style={{
+                      borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem',
+                      backgroundColor: cardBackgroundColor
+                    }}
                   >
                     <div className="flex flex-col md:flex-row gap-6 p-6">
                       {product.images[0] && (
@@ -523,16 +590,19 @@ export const PublicMenu: React.FC = () => {
                           {product.name}
                         </h3>
                         <p
-                          className="text-gray-600 mb-4 text-base leading-relaxed"
-                          style={{ fontFamily: theme.primary_font || 'Inter' }}
+                          className="mb-4 text-base leading-relaxed"
+                          style={{
+                            fontFamily: theme.primary_font || 'Inter',
+                            color: secondaryTextColor
+                          }}
                         >
                           {product.description}
                         </p>
                         <span
                           className="font-bold text-2xl"
                           style={{
-                            color: accentColor,
-                            fontFamily: theme.secondary_font || 'Poppins'
+                            fontFamily: theme.secondary_font || 'Poppins',
+                            cssText: `color: ${primaryColor} !important;`
                           }}
                         >
                           Desde ${minPrice.toLocaleString('es-CO')}
@@ -547,9 +617,12 @@ export const PublicMenu: React.FC = () => {
                 return (
                   <div
                     key={product.id}
-                    className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden"
+                    className="rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden"
                     onClick={() => setSelectedProduct(product)}
-                    style={{ borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem' }}
+                    style={{
+                      borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem',
+                      backgroundColor: cardBackgroundColor
+                    }}
                   >
                     {product.images[0] && (
                       <img
@@ -569,15 +642,15 @@ export const PublicMenu: React.FC = () => {
                       >
                         {product.name}
                       </h3>
-                      <span
-                        className="font-bold text-lg"
-                        style={{
-                          color: accentColor,
-                          fontFamily: theme.secondary_font || 'Poppins'
-                        }}
-                      >
-                        ${minPrice.toLocaleString('es-CO')}
-                      </span>
+                        <span
+                          className="font-bold text-lg"
+                          style={{
+                            fontFamily: theme.secondary_font || 'Poppins',
+                            cssText: `color: ${primaryColor} !important;`
+                          }}
+                        >
+                          ${minPrice.toLocaleString('es-CO')}
+                        </span>
                     </div>
                   </div>
                 );
@@ -586,9 +659,12 @@ export const PublicMenu: React.FC = () => {
               return (
                 <div
                   key={product.id}
-                  className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-center gap-4 p-4"
+                  className="rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-center gap-4 p-4"
                   onClick={() => setSelectedProduct(product)}
-                  style={{ borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem' }}
+                  style={{
+                    borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem',
+                    backgroundColor: cardBackgroundColor
+                  }}
                 >
                   {product.images[0] && (
                     <img
@@ -618,8 +694,8 @@ export const PublicMenu: React.FC = () => {
                       <span
                         className="font-bold text-lg"
                         style={{
-                          color: accentColor,
-                          fontFamily: theme.secondary_font || 'Poppins'
+                            fontFamily: theme.secondary_font || 'Poppins',
+                            cssText: `color: ${primaryColor} !important;`
                         }}
                       >
                         ${minPrice.toLocaleString('es-CO')}
@@ -694,15 +770,18 @@ export const PublicMenu: React.FC = () => {
           onClick={() => setShowHoursModal(false)}
         >
           <div
-            className="relative max-w-md w-full bg-white rounded-lg overflow-hidden p-6"
+            className="relative max-w-md w-full rounded-lg overflow-hidden p-6"
             onClick={(e) => e.stopPropagation()}
-            style={{ borderRadius: theme.button_style === 'rounded' ? '1rem' : '0.5rem' }}
+            style={{
+              backgroundColor: cardBackgroundColor,
+              borderRadius: theme.button_style === 'rounded' ? '1rem' : '0.5rem',
+            }}
           >
             <button
               onClick={() => setShowHoursModal(false)}
               className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5" style={{ color: primaryTextColor, stroke: primaryTextColor }} />
             </button>
             <h3 className="text-xl font-bold mb-4" style={{ color: textColor, fontFamily: theme.secondary_font || 'Poppins' }}>
               Horarios de Atención
@@ -737,22 +816,23 @@ export const PublicMenu: React.FC = () => {
       {/* OPEN/CLOSED STATUS BUTTON */}
       <button
         onClick={() => setShowHoursModal(true)}
-        className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-white shadow-lg px-4 py-3 z-40 transition-all hover:shadow-xl"
+        className="fixed right-6 top-1/2 transform -translate-y-1/2 shadow-lg px-4 py-3 z-40 transition-all hover:shadow-xl"
         style={{
+          backgroundColor: cardBackgroundColor,
           borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
           borderLeft: `4px solid ${(() => {
             const now = new Date();
             const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
             const currentDay = dayNames[now.getDay()];
             const hours = restaurant.settings.business_hours?.[currentDay];
-            if (!hours?.is_open) return '#ef4444';
+            if (!hours?.is_open) return '#ef4444'; // rojo si está cerrado
             const currentTime = now.getHours() * 60 + now.getMinutes();
             const [openH, openM] = hours.open.split(':').map(Number);
             const [closeH, closeM] = hours.close.split(':').map(Number);
             const openTime = openH * 60 + openM;
             const closeTime = closeH * 60 + closeM;
-            return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444';
-          })()}`
+            return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde si abierto
+          })()}`,
         }}
       >
         <div className="flex items-center gap-2">
@@ -795,14 +875,20 @@ export const PublicMenu: React.FC = () => {
 
       {/* FLOATING FOOTER BAR */}
       <div
-        className="fixed bottom-1 left-2 right-2 shadow-lg z-40 rounded-xl p-1 backdrop-blur-md border border-white/30" /* se le agregar este codigo para los bordes redondeados y padding a los lados*/
+        className="fixed bottom-1 left-2 right-2 shadow-lg z-40 rounded-xl p-1 " /* se le agregar este codigo para los bordes redondeados y padding a los lados*/
         style={{ backgroundColor: primaryColor }}
       >
-        <div className="max-w-7xl mx-auto px-5 py-3">
-          <div className="flex items-center justify-between gap-4 flex-wrap ">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-2 text-sm">
-              <MapPin className="w-4 h-4 text-gray-800" />
-              <span className="font-medium text-gray-800" style={{ fontFamily: theme.primary_font || 'Inter' }}>
+              <MapPin className="w-4 h-4" style={{ color: secondaryTextColor, stroke: secondaryTextColor }} />
+                <span
+                  className="font-medium"
+                  style={{
+                    fontFamily: theme.primary_font || 'Inter',
+                    cssText: `color: ${secondaryTextColor} !important;`,
+                  }}
+                >
                 {restaurant.address}
               </span>
             </div>
@@ -812,10 +898,13 @@ export const PublicMenu: React.FC = () => {
                   href={restaurant.settings.social_media.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-                  style={{ borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem' }}
+                  className="p-2 hover:opacity-90 transition-colors rounded-lg"
+                  style={{
+                    backgroundColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  }}
                 >
-                  <Facebook className="w-5 h-5 text-gray-800" />
+                  <Facebook className="w-5 h-5" style={{ color: primaryColor, stroke: primaryColor }} />
                 </a>
               )}
               {restaurant.settings.social_media?.instagram && (
@@ -823,19 +912,27 @@ export const PublicMenu: React.FC = () => {
                   href={restaurant.settings.social_media.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-                  style={{ borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem' }}
+                  className="p-2 hover:opacity-90 transition-colors rounded-lg"
+                  style={{
+                    backgroundColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  }}
                 >
-                  <Instagram className="w-5 h-5 text-gray-800" />
+                  <Instagram className="w-5 h-5" style={{ color: primaryColor, stroke: primaryColor }} />
                 </a>
               )}
-              {restaurant.phone && (
+              {restaurant.settings.social_media?.whatsapp && (
                 <a
-                  href={`tel:${restaurant.phone}`}
-                  className="p-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
-                  style={{ borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem' }}
+                  href={restaurant.settings.social_media.phone}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 hover:opacity-90 transition-colors rounded-lg"
+                  style={{
+                    backgroundColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  }}
                 >
-                  <Phone className="w-5 h-5 text-gray-800" />
+                  <Phone className="w-5 h-5" style={{ color: primaryColor, stroke: primaryColor }} />
                 </a>
               )}
             </div>
