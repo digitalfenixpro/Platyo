@@ -311,19 +311,7 @@ export const PublicMenu: React.FC = () => {
                 })(),
                 borderColor: cardBackgroundColor,
                 borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-                borderLeft: `4px solid ${(() => {
-                  const now = new Date();
-                  const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-                  const currentDay = dayNames[now.getDay()];
-                  const hours = restaurant.settings.business_hours?.[currentDay];
-                  if (!hours?.is_open) return '#ef4444'; // rojo si está cerrado
-                  const currentTime = now.getHours() * 60 + now.getMinutes();
-                  const [openH, openM] = hours.open.split(':').map(Number);
-                  const [closeH, closeM] = hours.close.split(':').map(Number);
-                  const openTime = openH * 60 + openM;
-                  const closeTime = closeH * 60 + closeM;
-                  return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde si abierto
-                })()}`,
+                
               }}
             >
               <Clock className="w-5 h-5" style={{ color: textColor }} />
