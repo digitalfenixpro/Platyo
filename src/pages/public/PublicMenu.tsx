@@ -702,7 +702,7 @@ export const PublicMenu: React.FC = () => {
                       <h3
                         className="font-bold mb-2 line-clamp-1"
                         style={{
-                          fontSize: '16px',
+                          fontSize: '14px',
                           fontFamily: theme.secondary_font || 'Poppins',
                           color: textColor
                         }}
