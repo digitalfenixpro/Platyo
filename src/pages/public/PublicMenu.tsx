@@ -222,7 +222,7 @@ export const PublicMenu: React.FC = () => {
           absolute 
           opacity-80 
           pointer-events-none 
-          w-[800px] h-[800px]
+          w-[200px] h-[200px]
       
           /* Versión móvil */
           bottom-0 left-1/2 -translate-x-1/2 translate-y-0
@@ -233,7 +233,7 @@ export const PublicMenu: React.FC = () => {
         viewBox="0 0 253 272"
         xmlns="http://www.w3.org/2000/svg"
         style={{
-          transform: 'translate(50%, -25%)',
+          transform: 'translate(50%, -50%)',
         }}
       >
         <path
