@@ -884,7 +884,7 @@ export const PublicMenu: React.FC = () => {
         </div>
       )}
 
-      {/* OPEN/CLOSED STATUS BUTTON */}
+      {/* OPEN/CLOSED STATUS BUTTON 
       <button
         onClick={() => setShowHoursModal(true)}
         className="fixed right-6 top-1/2 transform -translate-y-1/2 shadow-lg px-4 py-3 z-40 transition-all hover:shadow-xl"
@@ -942,7 +942,7 @@ export const PublicMenu: React.FC = () => {
             </p>
           </div>
         </div>
-      </button>
+      </button>*/}
 
       {/* FLOATING FOOTER BAR */}
       <div
