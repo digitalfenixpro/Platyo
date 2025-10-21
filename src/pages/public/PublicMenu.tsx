@@ -230,6 +230,13 @@ export const PublicMenu: React.FC = () => {
           /* Versión escritorio */
           sm:bottom-10 sm:right-0 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
         "
+        className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none"
+        style={{
+          opacity: 0.8, // antes estaba en className como opacity-80
+          transform: 'translate(-20%, -20%)',
+          borderBottomRightRadius: '50% 40%',
+          borderTopRightRadius: '0% 0%',
+        }}
         viewBox="0 0 253 272"
         xmlns="http://www.w3.org/2000/svg"
         style={{
