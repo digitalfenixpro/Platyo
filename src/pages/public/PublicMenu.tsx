@@ -293,55 +293,6 @@ export const PublicMenu: React.FC = () => {
             {/* Action Buttons */}
             
             <div className="flex items-center gap-2 flex-1 justify-end max-w-xs">
-              {hasPromo && (
-                <button
-                  onClick={() => setShowPromoModal(true)}
-                  className="p-3 rounded-lg border transition-colors relative hover:opacity-90 shadow-lg"
-                  style={{
-                    backgroundColor: cardBackgroundColor,
-                    borderColor: cardBackgroundColor,
-                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-                  }}
-                >
-                  <Gift
-                    className="w-5 h-5"
-                    style={{
-                      color: textColor,
-                    }}
-                  />
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: '-4px',       // antes 6px → negativo para que quede encima del borde
-                      right: '-4px',     // antes 6px → negativo para que sobresalga del borde
-                      width: '15px',
-                      height: '15px',
-                      backgroundColor: secondaryColor,
-                      borderRadius: '50%',
-                      boxShadow: '0 0 0 2px white', // opcional: halo blanco para destacar
-                    }}
-                  />
-                </button>
-              )}
-              <button
-                onClick={() => setShowCart(true)}
-                className="p-3 rounded-lg border hover:opacity-90 transition-colors relative shadow-lg"
-                style={{
-                  backgroundColor: cardBackgroundColor,
-                  borderColor: cardBackgroundColor,
-                  borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-                }}
-              >
-                <ShoppingCart className="w-5 h-5" style={{ color: primaryTextColor, stroke: primaryTextColor }} />
-                {cartItemsCount > 0 && (
-                  <span
-                    className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                    style={{ backgroundColor: secondaryColor }}
-                  >
-                    {cartItemsCount}
-                  </span>
-                )}
-              </button>
               {/* DF:OPEN/CLOSED STATUS BUTTON */}
               <button
                 onClick={() => setShowHoursModal(true)}
@@ -403,6 +354,56 @@ export const PublicMenu: React.FC = () => {
                   </p>
                 </div>
               </button>
+              {hasPromo && (
+                <button
+                  onClick={() => setShowPromoModal(true)}
+                  className="p-3 rounded-lg border transition-colors relative hover:opacity-90 shadow-lg"
+                  style={{
+                    backgroundColor: cardBackgroundColor,
+                    borderColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  }}
+                >
+                  <Gift
+                    className="w-5 h-5"
+                    style={{
+                      color: textColor,
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: 'absolute',
+                      top: '-4px',       // antes 6px → negativo para que quede encima del borde
+                      right: '-4px',     // antes 6px → negativo para que sobresalga del borde
+                      width: '15px',
+                      height: '15px',
+                      backgroundColor: secondaryColor,
+                      borderRadius: '50%',
+                      boxShadow: '0 0 0 2px white', // opcional: halo blanco para destacar
+                    }}
+                  />
+                </button>
+              )}
+              <button
+                onClick={() => setShowCart(true)}
+                className="p-3 rounded-lg border hover:opacity-90 transition-colors relative shadow-lg"
+                style={{
+                  backgroundColor: cardBackgroundColor,
+                  borderColor: cardBackgroundColor,
+                  borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                }}
+              >
+                <ShoppingCart className="w-5 h-5" style={{ color: primaryTextColor, stroke: primaryTextColor }} />
+                {cartItemsCount > 0 && (
+                  <span
+                    className="absolute -top-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                    style={{ backgroundColor: secondaryColor }}
+                  >
+                    {cartItemsCount}
+                  </span>
+                )}
+              </button>
+              
               
             </div>
           </div>
