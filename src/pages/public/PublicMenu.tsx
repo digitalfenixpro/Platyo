@@ -288,6 +288,9 @@ export const PublicMenu: React.FC = () => {
                 </div>
               )}
             </div>
+            
+
+            {/* Action Buttons */}
             {/* OPEN/CLOSED STATUS BUTTON */}
             <button
               onClick={() => setShowHoursModal(true)}
@@ -358,8 +361,6 @@ export const PublicMenu: React.FC = () => {
                 </p>
               </div>
             </button>
-
-            {/* Action Buttons */}
             <div className="flex items-center gap-2 flex-1 justify-end max-w-xs">
               {hasPromo && (
                 <button
