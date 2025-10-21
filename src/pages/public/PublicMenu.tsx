@@ -747,7 +747,7 @@ export const PublicMenu: React.FC = () => {
                        }}
                     />
                   )}
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 p-4">
                     <h3
                       className="font-bold mb-1 truncate"
                       style={{
