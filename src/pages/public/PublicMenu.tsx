@@ -328,7 +328,7 @@ export const PublicMenu: React.FC = () => {
             >
               <Clock className="w-5 h-5" style={{ color: textColor }} />
             
-              <div className="text-left leading-tight">
+              {/*<div className="text-left leading-tight">
                 <p
                   className="text-[11px] opacity-70"
                   style={{
@@ -337,7 +337,7 @@ export const PublicMenu: React.FC = () => {
                   }}
                 >
                   Estado
-                </p>
+                </p>*/}
                 <p
                   className="font-semibold text-sm"
                   style={{
