@@ -243,7 +243,7 @@ export const PublicMenu: React.FC = () => {
                       }, 100);
                     }
                   }}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:outline-none transition-colors placeholder-opacity-70 custom-placeholder shadow-lg"
+                  className="w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:outline-none transition-colors placeholder-opacity-70 custom-placeholder"
                   style={{
                     backgroundColor: cardBackgroundColor,
                     borderColor: cardBackgroundColor,
