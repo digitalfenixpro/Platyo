@@ -726,7 +726,7 @@ export const PublicMenu: React.FC = () => {
               return (
                 <div
                   key={product.id}
-                  className="rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-center gap-4 p-4 pl-0"
+                  className="rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-left gap-4 p-4 pl-0"
                   onClick={() => setSelectedProduct(product)}
                   style={{
                     borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem',
@@ -738,7 +738,7 @@ export const PublicMenu: React.FC = () => {
                     <img
                       src={product.images[0]}
                       alt={product.name}
-                      className="w-24 h-24 object-cover rounded-xl flex-shrink-0 " /*DF: agregue el rounded-xl para que se vea cuadrada la imagen*/
+                      className="object-cover rounded-xl flex-shrink-0 " /*DF: agregue el rounded-xl para que se vea cuadrada la imagen*/
                       style={{
                         width: '150px',
                         height: '150px',
