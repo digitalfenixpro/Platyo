@@ -9,6 +9,7 @@ import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 
 
+
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { items: cartItems } = useCart();
@@ -725,7 +726,7 @@ export const PublicMenu: React.FC = () => {
               return (
                 <div
                   key={product.id}
-                  className="rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-center gap-4 "
+                  className="rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden flex items-center gap-4 p-4"
                   onClick={() => setSelectedProduct(product)}
                   style={{
                     borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem',
