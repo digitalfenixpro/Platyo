@@ -834,7 +834,7 @@ export const PublicMenu: React.FC = () => {
         </div>
       )}
 
-      {/* OPEN/CLOSED STATUS BUTTON */}
+      {/* OPEN/CLOSED STATUS BUTTON 
       <button
         onClick={() => setShowHoursModal(true)}
         className="fixed right-6 top-1/2 transform -translate-y-1/2 shadow-lg px-4 py-3 z-40 transition-all hover:shadow-xl"
@@ -855,7 +855,7 @@ export const PublicMenu: React.FC = () => {
             return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde si abierto
           })()}`,
         }}
-      >
+      >*/}
         <div className="flex items-center gap-2">
           <Clock className="w-5 h-5" style={{ color: textColor }} />
           <div className="text-left">
