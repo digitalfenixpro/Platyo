@@ -8,7 +8,6 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import { useState } from 'react';
-import { Search, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 export const PublicMenu: React.FC = () => {
