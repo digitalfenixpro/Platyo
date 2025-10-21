@@ -730,6 +730,7 @@ export const PublicMenu: React.FC = () => {
                   onClick={() => setSelectedProduct(product)}
                   style={{
                     borderRadius: theme.button_style === 'rounded' ? '0.75rem' : '0.25rem',
+                    display: 'flex',
                     backgroundColor: cardBackgroundColor
                   }}
                 >
