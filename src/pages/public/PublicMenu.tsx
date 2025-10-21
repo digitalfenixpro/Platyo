@@ -220,7 +220,7 @@ export const PublicMenu: React.FC = () => {
         <div className="w-full mx-auto px-4 py-4"> {/* DF: SE REDUJO EL PADDING PARA QUE QUEDE MAS DELGADO */}
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
-             <div className="flex-1 max-w-xs">
+             <div className="flex-1 max-w-xs shadow-lg">
               <div className="relative">
                 {/* Icono de lupa */}
                 <Search
