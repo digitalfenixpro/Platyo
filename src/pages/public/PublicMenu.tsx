@@ -744,7 +744,6 @@ export const PublicMenu: React.FC = () => {
                         height: '150px',
                         objectFit: 'cover',
                         flexShrink: 0,
-                        border-top-right-radius: 0px,
                        }}
                     />
                   )}
