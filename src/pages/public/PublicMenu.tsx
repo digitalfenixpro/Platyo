@@ -739,6 +739,12 @@ export const PublicMenu: React.FC = () => {
                       src={product.images[0]}
                       alt={product.name}
                       className="w-24 h-24 object-cover rounded-xl flex-shrink-0 " /*DF: agregue el rounded-xl para que se vea cuadrada la imagen*/
+                      style={{
+                        width: '150px',
+                        height: '150px',
+                        objectFit: 'cover',
+                        flexShrink: 0,
+                       }}
                     />
                   )}
                   <div className="flex-1 min-w-0">
