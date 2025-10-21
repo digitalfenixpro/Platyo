@@ -345,7 +345,7 @@ export const PublicMenu: React.FC = () => {
               {/* DF:OPEN/CLOSED STATUS BUTTON */}
               <button
                 onClick={() => setShowHoursModal(true)}
-                className="flex items-center gap-2 px-3 py-3 rounded-lg border transition-all hover:opacity-90 shadow-sm"
+                className="flex items-center gap-2 px-3 py-3 rounded-lg border transition-all hover:opacity-90 shadow-lg"
                 style={{
                   backgroundColor: (() => {
                     const now = new Date();
@@ -360,7 +360,6 @@ export const PublicMenu: React.FC = () => {
                     const closeTime = closeH * 60 + closeM;
                     return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde o rojo
                   })(),
-                  borderColor: cardBackgroundColor,
                   borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
                   
                 }}
