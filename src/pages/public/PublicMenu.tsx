@@ -296,7 +296,7 @@ export const PublicMenu: React.FC = () => {
               {hasPromo && (
                 <button
                   onClick={() => setShowPromoModal(true)}
-                  className="p-3 rounded-lg border transition-colors relative hover:opacity-90"
+                  className="p-3 rounded-lg border transition-colors relative hover:opacity-90 shadow-lg"
                   style={{
                     backgroundColor: cardBackgroundColor,
                     borderColor: cardBackgroundColor,
@@ -325,7 +325,7 @@ export const PublicMenu: React.FC = () => {
               )}
               <button
                 onClick={() => setShowCart(true)}
-                className="p-3 rounded-lg border hover:opacity-90 transition-colors relative"
+                className="p-3 rounded-lg border hover:opacity-90 transition-colors relative shadow-lg"
                 style={{
                   backgroundColor: cardBackgroundColor,
                   borderColor: cardBackgroundColor,
