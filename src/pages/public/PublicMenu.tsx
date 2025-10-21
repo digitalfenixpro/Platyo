@@ -233,7 +233,7 @@ export const PublicMenu: React.FC = () => {
         viewBox="0 0 253 272"
         xmlns="http://www.w3.org/2000/svg"
         style={{
-          transform: 'translate(50%, -50%)',
+          transform: 'translate(25%, -25%)',
         }}
       >
         <path
