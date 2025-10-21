@@ -410,6 +410,153 @@ export const PublicMenu: React.FC = () => {
           </div>
         </section>
       )}
+      {/* FEATURED SECTION SLIDER */}
+{featuredProducts.length > 0 && (
+  <section className="max-w-7xl mx-auto px-6 sm:px-20 py-16 relative z-30 overflow-hidden">
+    <div className="text-left mb-12">
+      <p
+        className="text-xl mb-2 opacity-70"
+        style={{
+          color: textColor,
+          fontFamily: theme.primary_font || 'Inter',
+        }}
+      >
+        Te presentamos nuestros
+      </p>
+      <h2
+        className="text-4xl sm:text-5xl font-bold mb-2"
+        style={{
+          color: textColor,
+          fontFamily: theme.secondary_font || 'Poppins',
+        }}
+      >
+        destacados
+      </h2>
+      <div className="flex items-left justify-left gap-1">
+        {[1, 2, 3, 4, 5].map((i) => (
+          <Star
+            key={i}
+            className="w-5 h-5 fill-current"
+            style={{ color: accentColor }}
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* CONTENEDOR DEL SLIDER */}
+    <div className="relative h-[420px] sm:h-[450px]">
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div
+          className={`
+            flex sm:relative sm:w-full sm:max-w-4xl sm:h-full sm:items-center sm:justify-center
+            transition-transform duration-700 ease-in-out
+            sm:overflow-visible overflow-x-auto scrollbar-hide scroll-smooth
+          `}
+        >
+          {featuredProducts.map((product, index) => {
+            const offset = index - featuredSlideIndex;
+            const isCenter = offset === 0;
+            const isVisible = Math.abs(offset) <= 1;
+
+            // En móvil se muestran todos con desplazamiento horizontal
+            if (window.innerWidth >= 640 && !isVisible) return null;
+
+            return (
+              <div
+                key={product.id}
+                className={`
+                  transition-all duration-700 ease-in-out flex-shrink-0
+                  ${window.innerWidth < 640
+                    ? 'min-w-[85%] mr-4' // Móvil: ocupa 85% del ancho y muestra parte del siguiente
+                    : 'absolute cursor-pointer'}
+                `}
+                style={
+                  window.innerWidth >= 640
+                    ? {
+                        transform: `translateX(${offset * 350}px) scale(${
+                          isCenter ? 1.2 : 0.75
+                        })`,
+                        opacity: isCenter ? 1 : 0.4,
+                        zIndex: isCenter ? 20 : 10 - Math.abs(offset),
+                        pointerEvents: isCenter ? 'auto' : 'none',
+                      }
+                    : {}
+                }
+                onClick={() => isCenter && setSelectedProduct(product)}
+              >
+                <div className="relative flex flex-col items-center bg-white rounded-2xl shadow-md p-4">
+                  <img
+                    src={product.images[0]}
+                    alt={product.name}
+                    className="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded-lg"
+                  />
+                  {isCenter && (
+                    <div className="mt-6">
+                      <p
+                        className="font-bold text-center text-lg"
+                        style={{
+                          color: textColor,
+                          fontFamily: theme.secondary_font || 'Poppins',
+                        }}
+                      >
+                        {product.name}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* BOTONES SOLO EN DESKTOP */}
+      {featuredProducts.length > 1 && (
+        <>
+          <button
+            onClick={prevSlide}
+            className="hidden sm:flex absolute -left-10 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-20"
+            style={{
+              borderRadius:
+                theme.button_style === 'rounded' ? '9999px' : '0.5rem',
+            }}
+          >
+            <ChevronLeft className="w-6 h-6" style={{ color: textColor }} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="hidden sm:flex absolute -right-10 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-20"
+            style={{
+              borderRadius:
+                theme.button_style === 'rounded' ? '9999px' : '0.5rem',
+            }}
+          >
+            <ChevronRight className="w-6 h-6" style={{ color: textColor }} />
+          </button>
+
+          {/* INDICADORES */}
+          <div className="absolute -bottom-8 left-0 top-10 right-0 flex justify-center gap-2">
+            {featuredProducts.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setFeaturedSlideIndex(index)}
+                className="w-2 h-2 rounded-full transition-all"
+                style={{
+                  backgroundColor:
+                    index === featuredSlideIndex ? accentColor : '#d1d5db',
+                  width: index === featuredSlideIndex ? '24px' : '8px',
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  </section>
+)}
+
+      
+      
 
       {/* CATEGORIES TABS - CENTERED */}
       <div className="relative z-20" >
