@@ -737,7 +737,7 @@ export const PublicMenu: React.FC = () => {
                     <img
                       src={product.images[0]}
                       alt={product.name}
-                      className="w-30 h-full object-cover rounded-xl flex-shrink-0 " /*DF: agregue el rounded-xl para que se vea cuadrada la imagen*/
+                      className="w-24 h-24 object-cover rounded-xl flex-shrink-0 " /*DF: agregue el rounded-xl para que se vea cuadrada la imagen*/
                     />
                   )}
                   <div className="flex-1 min-w-0">
