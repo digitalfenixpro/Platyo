@@ -224,58 +224,69 @@ export const PublicMenu: React.FC = () => {
         <div className="w-full mx-auto px-4 py-4"> {/* DF: SE REDUJO EL PADDING PARA QUE QUEDE MAS DELGADO */}
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
-             <div className={`transition-all duration-500 ease-in-out ${
-                isSearchFocused ? 'fixed top-4 left-4 right-4 z-50 max-w-full' : 'max-w-xs'
-              } w-full`}>
-               
-              <div className="relative shadow-lg">
-                {/* Icono de lupa */}
-                <Search
-                  className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
-                  style={{ color: primaryTextColor, stroke: primaryTextColor }}
-                />
-            
-                {/* Input */}
-                <input
-                  type="text"
-                  placeholder="Buscar..."
-                  value={searchTerm}
-                  onChange={(e) => {
-                    onFocus={() => setIsSearchFocused(true)}
-                    onBlur={() => setIsSearchFocused(false)}
-                    setSearchTerm(e.target.value);
-                    if (e.target.value) {
-                      setTimeout(() => {
-                        document
-                          .getElementById('products-section')
-                          ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }, 100);
-                    }
-                  }}
-                  className="w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:outline-none transition-colors placeholder-opacity-70 custom-placeholder"
-                  style={{
-                    backgroundColor: cardBackgroundColor,
-                    borderColor: cardBackgroundColor,
-                    borderWidth: '1px',
-                    borderStyle: 'solid',
-                    borderRadius:
-                      theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-                    color: primaryTextColor,
-                    caretColor: primaryTextColor,
-                  }}
-                  onFocus={(e) => (e.target.style.borderColor = primaryTextColor)}
-                  onBlur={(e) => (e.target.style.borderColor = cardBackgroundColor)}
-                />
-            
-                {/* CSS dinámico para el placeholder */}
-                <style>{`
-                  .custom-placeholder::placeholder {
-                    color: ${primaryTextColor} !important;
-                    opacity: 0.7;
-                  }
-                `}</style>
-              </div>
-            </div>
+<div className="flex-1 max-w-xs sm:max-w-md lg:max-w-lg relative group transition-all duration-500 ease-in-out">
+  <div
+    className="relative shadow-2xl overflow-hidden"
+    style={{
+      borderTopLeftRadius: '1.25rem',
+      borderTopRightRadius: '1.25rem',
+      borderBottomLeftRadius: '0.75rem',
+      borderBottomRightRadius: '0.75rem',
+      backgroundColor: cardBackgroundColor,
+      transition: 'all 0.4s ease-in-out',
+    }}
+  >
+    {/* Icono de lupa */}
+    <Search
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none"
+      style={{ color: primaryTextColor, stroke: primaryTextColor }}
+    />
+
+    {/* Input */}
+    <input
+      type="text"
+      placeholder="Buscar productos..."
+      value={searchTerm}
+      onChange={(e) => {
+        setSearchTerm(e.target.value);
+        if (e.target.value) {
+          setTimeout(() => {
+            document
+              .getElementById('products-section')
+              ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
+      }}
+      className="w-full pl-10 pr-4 py-3 rounded-lg focus:ring-2 focus:outline-none transition-all duration-300 placeholder-opacity-70 custom-placeholder"
+      style={{
+        backgroundColor: cardBackgroundColor,
+        borderColor: cardBackgroundColor,
+        borderWidth: '1px',
+        borderStyle: 'solid',
+        color: primaryTextColor,
+        caretColor: primaryTextColor,
+      }}
+      onFocus={(e) => {
+        e.target.parentElement.style.transform = 'scale(1.05)';
+        e.target.parentElement.style.boxShadow = '0 10px 40px rgba(0,0,0,0.2)';
+        e.target.style.borderColor = primaryTextColor;
+      }}
+      onBlur={(e) => {
+        e.target.parentElement.style.transform = 'scale(1)';
+        e.target.parentElement.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+        e.target.style.borderColor = cardBackgroundColor;
+      }}
+    />
+
+    {/* CSS dinámico para el placeholder */}
+    <style>{`
+      .custom-placeholder::placeholder {
+        color: ${primaryTextColor} !important;
+        opacity: 0.6;
+      }
+    `}</style>
+  </div>
+</div>
 
             {/* Logo */}
             <div className="flex-shrink-0 text-center">
