@@ -546,8 +546,8 @@ export const PublicMenu: React.FC = () => {
 
       {/* CATEGORIES TABS - CENTERED */}
       <div className="relative z-20" >
-        <div className="max-w-6xl mx-auto px-2 py-4 relative"> {/*DF:REDUCIR ANCHO DE SECCION*/}
-          <div className="flex gap-3 overflow-x-auto scrollbar-hide justify-center">
+        <div className="max-w-6xl mx-auto px-1 py-1 relative"> {/*DF:REDUCIR ANCHO DE SECCION*/}
+          <div className="flex gap-2 overflow-x-auto scrollbar-hide justify-center">
             <button
               onClick={() => setSelectedCategory('all')}
               className="px-6 py-2.5 whitespace-nowrap transition-all font-medium text-sm"
