@@ -8,6 +8,7 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import { useState } from 'react';
+import { Search, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 
 export const PublicMenu: React.FC = () => {
@@ -26,7 +27,7 @@ export const PublicMenu: React.FC = () => {
   const [showPromoModal, setShowPromoModal] = useState(false);
   const [featuredSlideIndex, setFeaturedSlideIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | 'editorial'>('list');
-
+  const [showHoursModal, setShowHoursModal] = useState(false);
 
   const loadMenuData = () => {
     try {
