@@ -709,6 +709,12 @@ export const PublicMenu: React.FC = () => {
                       >
                         {product.name}
                       </h3>
+                      <p
+                        className="text-gray-600 text-sm mb-2 line-clamp-2"
+                        style={{ fontFamily: theme.primary_font || 'Inter' }}
+                      >
+                        {product.description}
+                      </p>
                         <span
                           className="font-bold text-lg"
                           style={{
