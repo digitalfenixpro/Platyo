@@ -27,8 +27,7 @@ export const PublicMenu: React.FC = () => {
   const [showPromoModal, setShowPromoModal] = useState(false);
   const [featuredSlideIndex, setFeaturedSlideIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | 'editorial'>('list');
-  const [showHoursModal, setShowHoursModal] = useState(false);
-  const [isSearchFocused, setIsSearchFocused] = useState(false); /* DF:AGREGAMOS ESTO PARA LA ACCION DEL BUSCADOR */
+
 
   const loadMenuData = () => {
     try {
@@ -225,7 +224,6 @@ export const PublicMenu: React.FC = () => {
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
              <div className="flex-1 max-w-xs shadow-lg">
-               
               <div className="relative">
                 {/* Icono de lupa */}
                 <Search
@@ -271,7 +269,7 @@ export const PublicMenu: React.FC = () => {
                   }
                 `}</style>
               </div>
-            </div> 
+            </div>
 
             {/* Logo */}
             <div className="flex-shrink-0 text-center">
