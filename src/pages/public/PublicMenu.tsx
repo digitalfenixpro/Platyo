@@ -472,7 +472,7 @@ export const PublicMenu: React.FC = () => {
                         <img
                           src={product.images[0]}
                           alt={product.name}
-                          className="w-75 h-80 object-cover rounded-t-lg "
+                          className="w-75 h-75 object-cover rounded-t-lg "
                             style={{
                               backgroundColor: cardBackgroundColor,
                             }}
