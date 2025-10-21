@@ -588,7 +588,7 @@ export const PublicMenu: React.FC = () => {
       </div>
 
       {/* PRODUCTS LIST */}
-      <main className="max-w-7xl mx-auto px-4 py-8 pb-24 relative z-10" id="products-section">
+      <main className="max-w-7xl mx-auto px-4 py-4 pb-24 relative z-10" id="products-section">
         {/* View Mode Selector */}
         <div className="flex justify-end mb-6 gap-2">
           <button
