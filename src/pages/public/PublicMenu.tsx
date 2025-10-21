@@ -7,6 +7,9 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
+import { useState } from 'react';
+import { Search, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -25,6 +28,7 @@ export const PublicMenu: React.FC = () => {
   const [featuredSlideIndex, setFeaturedSlideIndex] = useState(0);
   const [viewMode, setViewMode] = useState<'list' | 'grid' | 'editorial'>('list');
   const [showHoursModal, setShowHoursModal] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false); /* DF:AGREGAMOS ESTO PARA LA ACCION DEL BUSCADOR */
 
   const loadMenuData = () => {
     try {
@@ -220,8 +224,11 @@ export const PublicMenu: React.FC = () => {
         <div className="w-full mx-auto px-4 py-4"> {/* DF: SE REDUJO EL PADDING PARA QUE QUEDE MAS DELGADO */}
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
-             <div className="flex-1 max-w-xs shadow-lg">
-              <div className="relative">
+             <div className={`transition-all duration-500 ease-in-out ${
+                isSearchFocused ? 'fixed top-4 left-4 right-4 z-50 max-w-full' : 'max-w-xs'
+              } w-full`}>
+               
+              <div className="relative shadow-lg">
                 {/* Icono de lupa */}
                 <Search
                   className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
@@ -234,6 +241,8 @@ export const PublicMenu: React.FC = () => {
                   placeholder="Buscar..."
                   value={searchTerm}
                   onChange={(e) => {
+                    onFocus={() => setIsSearchFocused(true)}
+                    onBlur={() => setIsSearchFocused(false)}
                     setSearchTerm(e.target.value);
                     if (e.target.value) {
                       setTimeout(() => {
