@@ -216,8 +216,8 @@ export const PublicMenu: React.FC = () => {
       </svg>
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 relative bg-white/30 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-1 py-1">
+      <header className="sticky top-0 z-50 relative "> {/* DF: SE QUITÓ EL BLUR */}
+        <div className="max-w-7xl mx-auto px-1 py-1"> {/* DF: SE REDUJO EL PADDING PARA QUE QUEDE MAS DELGADO */}
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
              <div className="flex-1 max-w-xs">
