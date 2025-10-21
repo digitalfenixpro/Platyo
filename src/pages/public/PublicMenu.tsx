@@ -405,14 +405,14 @@ export const PublicMenu: React.FC = () => {
                         <img
                           src={product.images[0]}
                           alt={product.name}
-                          className="w-80 h-80 object-cover rounded-lg "
+                          className="w-80 h-80 object-cover rounded-t-lg "
                             style={{
                               backgroundColor: cardBackgroundColor,
                             }}
                         />
                         {isCenter && (
                           <div
-                            className="mt-6 px-2 py-2 max-w-xs"
+                            className="mt-6 px-1 py-1 max-w-xs"
                             style={{
                               backgroundColor: cardBackgroundColor,
                             }}
