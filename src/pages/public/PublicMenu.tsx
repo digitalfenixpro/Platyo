@@ -342,7 +342,7 @@ export const PublicMenu: React.FC = () => {
                   </span>
                 )}
               </button>
-              {/* OPEN/CLOSED STATUS BUTTON */}
+              {/* DF:OPEN/CLOSED STATUS BUTTON */}
               <button
                 onClick={() => setShowHoursModal(true)}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-all hover:opacity-90 shadow-sm"
