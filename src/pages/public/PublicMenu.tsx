@@ -343,67 +343,67 @@ export const PublicMenu: React.FC = () => {
                 )}
               </button>
               {/* OPEN/CLOSED STATUS BUTTON */}
-            <button
-              onClick={() => setShowHoursModal(true)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-all hover:opacity-90 shadow-sm"
-              style={{
-                backgroundColor: (() => {
-                  const now = new Date();
-                  const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-                  const currentDay = dayNames[now.getDay()];
-                  const hours = restaurant.settings.business_hours?.[currentDay];
-                  if (!hours?.is_open) return '#ef4444'; // rojo si cerrado
-                  const currentTime = now.getHours() * 60 + now.getMinutes();
-                  const [openH, openM] = hours.open.split(':').map(Number);
-                  const [closeH, closeM] = hours.close.split(':').map(Number);
-                  const openTime = openH * 60 + openM;
-                  const closeTime = closeH * 60 + closeM;
-                  return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde o rojo
-                })(),
-                borderColor: cardBackgroundColor,
-                borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-                
-              }}
-            >
-              <Clock className="w-5 h-5" style={{ color: textColor }} />
-            
-              <div className="text-left leading-tight"> 
-                
-                <p
-                  className="font-semibold text-sm"
-                  style={{
-                    color: (() => {
-                      const now = new Date();
-                      const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-                      const currentDay = dayNames[now.getDay()];
-                      const hours = restaurant.settings.business_hours?.[currentDay];
-                      if (!hours?.is_open) return '#ef4444';
-                      const currentTime = now.getHours() * 60 + now.getMinutes();
-                      const [openH, openM] = hours.open.split(':').map(Number);
-                      const [closeH, closeM] = hours.close.split(':').map(Number);
-                      const openTime = openH * 60 + openM;
-                      const closeTime = closeH * 60 + closeM;
-                      return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444';
-                    })(),
-                    fontFamily: theme.secondary_font || 'Poppins',
-                  }}
-                >
-                  {(() => {
+              <button
+                onClick={() => setShowHoursModal(true)}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-all hover:opacity-90 shadow-sm"
+                style={{
+                  backgroundColor: (() => {
                     const now = new Date();
                     const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
                     const currentDay = dayNames[now.getDay()];
                     const hours = restaurant.settings.business_hours?.[currentDay];
-                    if (!hours?.is_open) return 'Cerrado';
+                    if (!hours?.is_open) return '#ef4444'; // rojo si cerrado
                     const currentTime = now.getHours() * 60 + now.getMinutes();
                     const [openH, openM] = hours.open.split(':').map(Number);
                     const [closeH, closeM] = hours.close.split(':').map(Number);
                     const openTime = openH * 60 + openM;
                     const closeTime = closeH * 60 + closeM;
-                    return currentTime >= openTime && currentTime <= closeTime ? 'Abierto' : 'Cerrado';
-                  })()}
-                </p>
-              </div>
-            </button>
+                    return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde o rojo
+                  })(),
+                  borderColor: cardBackgroundColor,
+                  borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  
+                }}
+              >
+                <Clock className="w-5 h-5" style={{ color: textColor }} />
+              
+                <div className="text-left leading-tight"> 
+                  
+                  <p
+                    className="font-semibold text-sm"
+                    style={{
+                      color: (() => {
+                        const now = new Date();
+                        const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+                        const currentDay = dayNames[now.getDay()];
+                        const hours = restaurant.settings.business_hours?.[currentDay];
+                        if (!hours?.is_open) return '#ef4444';
+                        const currentTime = now.getHours() * 60 + now.getMinutes();
+                        const [openH, openM] = hours.open.split(':').map(Number);
+                        const [closeH, closeM] = hours.close.split(':').map(Number);
+                        const openTime = openH * 60 + openM;
+                        const closeTime = closeH * 60 + closeM;
+                        return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444';
+                      })(),
+                      fontFamily: theme.secondary_font || 'Poppins',
+                    }}
+                  >
+                    {(() => {
+                      const now = new Date();
+                      const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+                      const currentDay = dayNames[now.getDay()];
+                      const hours = restaurant.settings.business_hours?.[currentDay];
+                      if (!hours?.is_open) return 'Cerrado';
+                      const currentTime = now.getHours() * 60 + now.getMinutes();
+                      const [openH, openM] = hours.open.split(':').map(Number);
+                      const [closeH, closeM] = hours.close.split(':').map(Number);
+                      const openTime = openH * 60 + openM;
+                      const closeTime = closeH * 60 + closeM;
+                      return currentTime >= openTime && currentTime <= closeTime ? 'Abierto' : 'Cerrado';
+                    })()}
+                  </p>
+                </div>
+              </button>
               
             </div>
           </div>
