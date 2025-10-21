@@ -292,34 +292,34 @@ export const PublicMenu: React.FC = () => {
             {/* Action Buttons */}
             <div className="flex items-center gap-2 flex-1 justify-end max-w-xs">
               {hasPromo && (
-<button
-  onClick={() => setShowPromoModal(true)}
-  className="p-3 rounded-lg border transition-colors relative hover:opacity-90"
-  style={{
-    backgroundColor: cardBackgroundColor,
-    borderColor: cardBackgroundColor,
-    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
-  }}
->
-  <Gift
-    className="w-5 h-5"
-    style={{
-      color: textColor,
-    }}
-  />
-  <span
-    style={{
-      position: 'absolute',
-      top: '-4px',       // antes 6px → negativo para que quede encima del borde
-      right: '-4px',     // antes 6px → negativo para que sobresalga del borde
-      width: '15px',
-      height: '15px',
-      backgroundColor: secondaryColor,
-      borderRadius: '50%',
-      boxShadow: '0 0 0 2px white', // opcional: halo blanco para destacar
-    }}
-  />
-</button>
+                <button
+                  onClick={() => setShowPromoModal(true)}
+                  className="p-3 rounded-lg border transition-colors relative hover:opacity-90"
+                  style={{
+                    backgroundColor: cardBackgroundColor,
+                    borderColor: cardBackgroundColor,
+                    borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  }}
+                >
+                  <Gift
+                    className="w-5 h-5"
+                    style={{
+                      color: textColor,
+                    }}
+                  />
+                  <span
+                    style={{
+                      position: 'absolute',
+                      top: '-4px',       // antes 6px → negativo para que quede encima del borde
+                      right: '-4px',     // antes 6px → negativo para que sobresalga del borde
+                      width: '15px',
+                      height: '15px',
+                      backgroundColor: secondaryColor,
+                      borderRadius: '50%',
+                      boxShadow: '0 0 0 2px white', // opcional: halo blanco para destacar
+                    }}
+                  />
+                </button>
               )}
               <button
                 onClick={() => setShowCart(true)}
@@ -340,6 +340,27 @@ export const PublicMenu: React.FC = () => {
                   </span>
                 )}
               </button>
+              <button
+                onClick={() => setShowHoursModal(true)}
+                className="fixed right-6 top-1/2 transform -translate-y-1/2 shadow-lg px-4 py-3 z-40 transition-all hover:shadow-xl"
+                style={{
+                  backgroundColor: cardBackgroundColor,
+                  borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
+                  borderLeft: `4px solid ${(() => {
+                    const now = new Date();
+                    const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+                    const currentDay = dayNames[now.getDay()];
+                    const hours = restaurant.settings.business_hours?.[currentDay];
+                    if (!hours?.is_open) return '#ef4444'; // rojo si está cerrado
+                    const currentTime = now.getHours() * 60 + now.getMinutes();
+                    const [openH, openM] = hours.open.split(':').map(Number);
+                    const [closeH, closeM] = hours.close.split(':').map(Number);
+                    const openTime = openH * 60 + openM;
+                    const closeTime = closeH * 60 + closeM;
+                    return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde si abierto
+                  })()}`,
+                }}
+              >
             </div>
           </div>
         </div>
