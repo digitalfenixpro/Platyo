@@ -745,7 +745,7 @@ export const PublicMenu: React.FC = () => {
                         objectFit: 'cover',
                         flexShrink: 0,
                         borderTopRightRadius: '0px',
-                        borderBottomRightRadius: '0px',
+                        borderBottomRightRadius: '0px',/*DF:configurar las imagenes para que vayan al borde*/
                        }}
                     />
                   )}
