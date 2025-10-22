@@ -220,7 +220,7 @@ export const PublicMenu: React.FC = () => {
       <Pathtop
         className="
           absolute
-          bottom-0 right-0
+          bottom-0 -right-5
           w-[250px] h-auto
           opacity-80
           pointer-events-none
