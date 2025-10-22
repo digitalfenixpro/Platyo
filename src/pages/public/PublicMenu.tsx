@@ -7,7 +7,8 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
- 
+import Shapebottom from '/home/project/src/components/public/Shapebottom.tsx'
+
 
 
 export const PublicMenu: React.FC = () => {
