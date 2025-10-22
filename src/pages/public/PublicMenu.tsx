@@ -217,7 +217,15 @@ export const PublicMenu: React.FC = () => {
         />
       </svg>
       
-      <Pathtop/>
+      <Pathtop
+        className="
+          absolute
+          bottom-0 right-0
+          w-[250px] h-auto
+          opacity-80
+          pointer-events-none
+        "
+      />
       
 
       
