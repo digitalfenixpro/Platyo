@@ -45,7 +45,7 @@ const AppRoutes: React.FC = () => {
 
   return (
     <Routes>
-      <Route
+      <Route 
         path="/login"
         element={
           loading ? (
