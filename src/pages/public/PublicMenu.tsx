@@ -215,7 +215,7 @@ export const PublicMenu: React.FC = () => {
           fill={primaryColor}
         />
       </svg>
-      img
+      <img src={Pathbottom} alt='light'/>
       
 
       
