@@ -10,7 +10,6 @@ import { CheckoutModal } from '../../components/public/CheckoutModal';
  
 
 
-
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const { items: cartItems } = useCart();
