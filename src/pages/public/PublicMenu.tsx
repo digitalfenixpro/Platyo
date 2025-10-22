@@ -175,6 +175,9 @@ export const PublicMenu: React.FC = () => {
         
 
       `}</style>
+      <div className="relative">
+        <ShapeSVG primaryColor="#FF5733" />
+      </div>
 
             {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
