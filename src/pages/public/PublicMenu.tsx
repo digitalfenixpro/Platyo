@@ -224,7 +224,11 @@ export const PublicMenu: React.FC = () => {
           w-[250px] h-auto
           opacity-80
           pointer-events-none
+          rotate-90
         "
+        style={{
+          transform: 'translate(25%, -25%)', 
+        }}
       />
       
 
