@@ -227,7 +227,7 @@ export const PublicMenu: React.FC = () => {
           rotate-90
         "
         style={{
-          transform: 'translate(25%, -25%)', 
+          fill={primaryColor}
         }}
       />
       
