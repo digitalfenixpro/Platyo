@@ -314,8 +314,9 @@ export const PublicMenu: React.FC = () => {
               {/* DF:OPEN/CLOSED STATUS BUTTON */}
               <button
                 onClick={() => setShowHoursModal(true)}
-                className="flex items-center gap-2 px-3 py-3 rounded-lg transition-all hover:opacity-90 shadow-lg"
+                className="flex items-center gap-2 px-3 py-3 rounded-lg transition-all hover:opacity-90 shadow-lg "
                 style={{
+                  borderColor: cardBackgroundColor,
                   backgroundColor: (() => {
                     const now = new Date();
                     const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
