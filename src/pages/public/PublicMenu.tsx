@@ -196,7 +196,7 @@ export const PublicMenu: React.FC = () => {
           pointer-events-none 
           w-[400px] h-[400px]
           /* Versión móvil */
-          top-0 left-1/2 -translate-x-1 translate-y-0
+          top-0 left-1/2 -translate-x-1 -translate-y-1
         
       
           /* Versión escritorio */
