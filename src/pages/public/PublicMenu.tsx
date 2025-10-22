@@ -223,7 +223,7 @@ export const PublicMenu: React.FC = () => {
           bottom-0 right-0
           opacity-80
           pointer-events-none
-          w-[250px] h-[250px]
+          w-[350px] h-[350px]
         "
         viewBox="0 0 253 272"
         xmlns="http://www.w3.org/2000/svg"
