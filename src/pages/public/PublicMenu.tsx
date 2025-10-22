@@ -217,7 +217,7 @@ export const PublicMenu: React.FC = () => {
         />
       </svg>
       
-      <Pathtop color={"primaryColor"}className="
+      <Pathtop color={"primaryColor"} className="
           absolute
           -bottom-1 -right-20
           w-[250px] h-auto
