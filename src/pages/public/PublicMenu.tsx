@@ -316,7 +316,19 @@ export const PublicMenu: React.FC = () => {
                 onClick={() => setShowHoursModal(true)}
                 className="flex items-center gap-2 px-3 py-3 rounded-lg transition-all hover:opacity-90 shadow-lg "
                 style={{
-                  borderColor: cardBackgroundColor,
+                  borderColor: (() => {
+                    const now = new Date();
+                    const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+                    const currentDay = dayNames[now.getDay()];
+                    const hours = restaurant.settings.business_hours?.[currentDay];
+                    if (!hours?.is_open) return '#ef4444'; // rojo si cerrado
+                    const currentTime = now.getHours() * 60 + now.getMinutes();
+                    const [openH, openM] = hours.open.split(':').map(Number);
+                    const [closeH, closeM] = hours.close.split(':').map(Number);
+                    const openTime = openH * 60 + openM;
+                    const closeTime = closeH * 60 + closeM;
+                    return currentTime >= openTime && currentTime <= closeTime ? '#10b981' : '#ef4444'; // verde o rojo
+                  })(),
                   backgroundColor: (() => {
                     const now = new Date();
                     const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
