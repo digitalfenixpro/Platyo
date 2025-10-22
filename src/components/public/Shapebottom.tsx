@@ -4,7 +4,6 @@ export default function Shapebottom() {
   return(
     <svg
     className="
-      absolute
       bottom-0 left-0
       opacity-80
       pointer-events-none
