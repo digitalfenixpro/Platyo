@@ -8,7 +8,7 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import Pathtop from '../../components/public/Pathformtop.tsx';
-import Pathbottom from '../../components/public/icons/Pathformbottom.tsx';
+import Pathbottom from '../../components/public/Pathformbottom.tsx';
 
 
 
