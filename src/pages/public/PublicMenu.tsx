@@ -226,7 +226,7 @@ export const PublicMenu: React.FC = () => {
           pointer-events-none
           rotate-45
         "
-        style={{
+        style={{ color={primaryColor},
         }}
       />
       
