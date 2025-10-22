@@ -7,7 +7,7 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
-import ShapeSVG from "../../components/svg/ShapeSVG.jsx";
+import ShapeSVG from "../../components/svg/ShapeSVG.tsx";
 
 
 
