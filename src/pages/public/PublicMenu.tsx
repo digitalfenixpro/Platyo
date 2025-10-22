@@ -8,6 +8,7 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import Pathbottom from '../../components/public/Pathformbottom.svg';
+import Pathtop from '../../components/public/Pathformtop.tsx';
 
 
 
