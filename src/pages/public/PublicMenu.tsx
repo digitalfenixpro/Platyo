@@ -224,10 +224,9 @@ export const PublicMenu: React.FC = () => {
           w-[250px] h-auto
           opacity-80
           pointer-events-none
-          rotate-90
+          rotate-45
         "
         style={{
-          fill={primaryColor}
         }}
       />
       
