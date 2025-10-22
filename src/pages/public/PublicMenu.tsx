@@ -216,7 +216,20 @@ export const PublicMenu: React.FC = () => {
           fill={primaryColor}
         />
       </svg>
+      <Pathbottom color={primaryColor}
+        className="
+          absolute 
+          opacity-80 
+          pointer-events-none 
+          w-[400px] h-[400px]
       
+          /* Versión móvil */
+          bottom-0 left-1/2 -translate-x-1/2 translate-y-0
+      
+          /* Versión escritorio */
+          sm:top-20 sm:right-0 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
+        ">
+      </Pathbottom>
       <Pathtop color={primaryColor} className="
           absolute
           -bottom-1 -right-20
