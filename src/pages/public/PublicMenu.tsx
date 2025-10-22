@@ -222,8 +222,9 @@ export const PublicMenu: React.FC = () => {
           absolute 
           opacity-80 
           pointer-events-none 
-          w-[200px] h-[200px]
-      
+          w-[250px] h-[250px]
+          top-40 
+          left-0
           /* Versión móvil */
           bottom-0 left-1/2 -translate-x-1/2 translate-y-0
       
