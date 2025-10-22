@@ -13,7 +13,7 @@ import Shapebottom from '../../components/public/Shapebottom';
 
 export const PublicMenu: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { items: cartItems } = useCart();
+  const { items: cartItems } = useCart(); 
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
