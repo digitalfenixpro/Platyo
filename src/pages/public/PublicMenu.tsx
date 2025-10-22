@@ -153,6 +153,8 @@ export const PublicMenu: React.FC = () => {
   const hasPromo = restaurant.settings.promo?.enabled && restaurant.settings.promo?.vertical_promo_image;
 
   return (
+    <Shapebottom/>
+    
     <div
       className="min-h-screen relative overflow-hidden"
       style={{
