@@ -229,7 +229,7 @@ export const PublicMenu: React.FC = () => {
           bottom-0 left-1/2 -translate-x-1/2 translate-y-0
       
           /* Versión escritorio */
-          sm:bottom-10 sm:right-0 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
+          sm:bottom-0 sm:right-50 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
         "
         viewBox="0 0 253 272"
         xmlns="http://www.w3.org/2000/svg"
