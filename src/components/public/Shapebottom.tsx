@@ -22,3 +22,4 @@ export default function Shapebottom() {
     </svg>
   )
 }
+export default Shapebottom
