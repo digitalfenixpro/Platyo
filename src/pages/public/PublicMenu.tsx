@@ -8,6 +8,7 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
  
+import {Shapesvgbottom} from 'src/components/svg/Shapesvgbottom.tsx';
 
 
 export const PublicMenu: React.FC = () => {
@@ -178,6 +179,7 @@ export const PublicMenu: React.FC = () => {
             {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       {/*SE AGREGARON TODOS LOS SVG*/}
+      <Shapesvgbottom/>
       <svg
         className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none"
         style={{
