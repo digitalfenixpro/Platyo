@@ -219,16 +219,11 @@ export const PublicMenu: React.FC = () => {
 
       <svg
         className="
-          absolute 
-          opacity-80 
-          pointer-events-none 
+          absolute
+          bottom-0 left-0
+          opacity-80
+          pointer-events-none
           w-[250px] h-[250px]
-          top-40 
-          /* Versión móvil */
-          bottom-0 left-1/2 -translate-x-1/2 translate-y-0
-      
-          /* Versión escritorio */
-          sm:bottom-0 sm:right-80 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
         "
         viewBox="0 0 253 272"
         xmlns="http://www.w3.org/2000/svg"
