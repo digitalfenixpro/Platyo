@@ -153,7 +153,6 @@ export const PublicMenu: React.FC = () => {
   const hasPromo = restaurant.settings.promo?.enabled && restaurant.settings.promo?.vertical_promo_image;
 
   return (
-    
     <div
       className="min-h-screen relative overflow-hidden"
       style={{
@@ -172,9 +171,10 @@ export const PublicMenu: React.FC = () => {
       <style>{`p, span { color: ${primaryTextColor} !important; }`}</style>
       
 
-            {/*<LeftShape color={primaryColor} />*/}
+      {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       {/*SE AGREGARON TODOS LOS SVG*/}
+      <Shapebottom> Hola</Shapebottom>
       <svg
         className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none"
         style={{
