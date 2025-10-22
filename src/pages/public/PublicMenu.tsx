@@ -220,7 +220,7 @@ export const PublicMenu: React.FC = () => {
       <svg
         className="
           absolute
-          bottom-0 left-0
+          bottom-0 right-0
           opacity-80
           pointer-events-none
           w-[250px] h-[250px]
