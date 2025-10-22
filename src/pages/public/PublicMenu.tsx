@@ -7,7 +7,6 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
-import Shapebottom from '../../components/public/Shapebottom';
 
 
 
