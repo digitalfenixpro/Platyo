@@ -8,7 +8,6 @@ import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
  
-import {Shapesvgbottom} from '../../components/svg/Shapesvgbottom.tsx';
 
 
 export const PublicMenu: React.FC = () => {
