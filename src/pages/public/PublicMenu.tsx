@@ -170,7 +170,7 @@ export const PublicMenu: React.FC = () => {
       } as React.CSSProperties}
     >
       <style>{`p, span { color: ${primaryTextColor} !important; }`}</style>
-      <Shapebottom> </Shapebottom>
+      
 
             {/*<LeftShape color={primaryColor} />*/}
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
