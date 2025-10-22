@@ -217,7 +217,7 @@ export const PublicMenu: React.FC = () => {
         />
       </svg>
       
-      <Pathtop
+      <Pathtop color={"primaryColor"}
         className="
           absolute
           -bottom-1 -right-20
@@ -226,8 +226,7 @@ export const PublicMenu: React.FC = () => {
           pointer-events-none
           rotate-45
         "
-        style={{ color={primaryColor},
-        }}
+
       />
       
 
