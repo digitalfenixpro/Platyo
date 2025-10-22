@@ -216,11 +216,8 @@ export const PublicMenu: React.FC = () => {
           fill={primaryColor}
         />
       </svg>
-      <img src={Pathbottom} alt='light'className="absolute bottom-0 -right-1 w-[250px] h-auto opacity-80 pointer-events-none rotate-90"
-        style={{
-          filter: 'invert(48%) sepia(96%) saturate(600%) hue-rotate(180deg)',
-        }}
-      />
+      
+      <Pathtop/>
       
 
       
