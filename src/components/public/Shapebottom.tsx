@@ -3,16 +3,6 @@ import {react} from 'react'
 export default function Shapebottom() {
   return(
     <svg
-    className="
-      bottom-0 left-0
-      opacity-80
-      pointer-events-none
-      w-[350px] h-[350px]
-      scale-x-[-1]
-    "
-      viewBox="0 0 253 272"
-      xmlns="http://www.w3.org/2000/svg"
-    >
       <path 
         fill={primaryColor}
         fillrule="evenodd"
