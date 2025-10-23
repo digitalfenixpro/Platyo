@@ -358,7 +358,7 @@ export const PublicMenu: React.FC = () => {
                   className="p-3 rounded-lg border transition-colors relative hover:opacity-90 shadow-lg"
                   style={{
                     backgroundColor: cardBackgroundColor,
-                    borderColor: cardBackgroundColor,
+                    
                     borderRadius: theme.button_style === 'rounded' ? '0.5rem' : '0.25rem',
                   }}
                 >
