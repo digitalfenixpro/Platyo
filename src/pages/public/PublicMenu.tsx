@@ -215,7 +215,7 @@ export const PublicMenu: React.FC = () => {
 
       {/* HEADER */}
       <header className="sticky top-0 z-50 relative "> {/* DF: SE QUITÓ EL BLUR */}
-        <div className="w-full mx-auto px-4 py-4"> {/* DF: SE REDUJO EL PADDING PARA QUE QUEDE MAS DELGADO */}
+        <div className="w-full mx-auto px-2 py-2"> {/* DF: SE REDUJO EL PADDING PARA QUE QUEDE MAS DELGADO */}
           <div className="flex items-center justify-between gap-4">
             {/* Search Bar */}
              <div className="flex-1 max-w-xs shadow-lg">
