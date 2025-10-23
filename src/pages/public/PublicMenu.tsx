@@ -411,7 +411,7 @@ export const PublicMenu: React.FC = () => {
       {/* FEATURED SECTION SLIDER */}
       {featuredProducts.length > 0 && (
         <section className="max-w-6xl mx-auto px-20 py-10 relative z-30">
-          <div className="text-left mb-8">
+          <div className="text-left mb-4">
             <p
               className="text-sm mb-2 opacity-70"
               style={{
