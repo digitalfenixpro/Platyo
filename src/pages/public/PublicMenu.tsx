@@ -183,7 +183,7 @@ export const PublicMenu: React.FC = () => {
           -top-20
           left-0
           opacity-80
-          w-[340px] 
+          w-[240px] 
           h-[800px]
           -translate-y-[10%]
           pointer-events-none
