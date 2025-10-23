@@ -180,7 +180,7 @@ export const PublicMenu: React.FC = () => {
       
       <Pathleft color={primaryColor} className="
           absolute
-          top-0
+          -top-20
           left-0
           opacity-80
           w-[340px] 
