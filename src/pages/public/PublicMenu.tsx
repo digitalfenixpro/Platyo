@@ -422,7 +422,7 @@ export const PublicMenu: React.FC = () => {
               Te presentamos nuestros
             </p>
             <h2
-              className="text-5xl font-bold mb-2"
+              className="text-4xl font-bold mb-2"
               style={{
                 color: textColor,
                 fontFamily: theme.secondary_font || 'Poppins'
