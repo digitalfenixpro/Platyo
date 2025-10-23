@@ -186,7 +186,6 @@ export const PublicMenu: React.FC = () => {
           w-[141 px] 
           h-[431 px]
           pointer-events-none
-          transform scale-150
         "> 
       </Pathleft>
       <Pathbottom color={primaryColor} className="
