@@ -183,8 +183,8 @@ export const PublicMenu: React.FC = () => {
           top-1
           left-0
           opacity-80
-          w-[141 px] 
-          h-[431 px]
+          w-[350 px] 
+          h-[800 px]
           pointer-events-none
         "> 
       </Pathleft>
