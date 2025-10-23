@@ -181,7 +181,7 @@ export const PublicMenu: React.FC = () => {
       <Pathleft color={primaryColor} className="
           absolute
           top-10 -left-1 
-          w-[141px] h-[431px]
+          w-[253px] h-auto
           pointer-events-none
         "> 
       </Pathleft>
