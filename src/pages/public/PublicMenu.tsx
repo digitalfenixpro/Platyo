@@ -294,7 +294,7 @@ export const PublicMenu: React.FC = () => {
               {/* DF:OPEN/CLOSED STATUS BUTTON */}
               <button
                 onClick={() => setShowHoursModal(true)}
-                className="w-5 h-5 flex items-center gap-2 p-3 rounded-lg transition-all hover:opacity-90 shadow-lg"
+                className=" flex items-center gap-2 p-3 rounded-lg transition-all hover:opacity-90 shadow-lg"
                 style={{
                   backgroundColor: (() => {
                     const now = new Date();
