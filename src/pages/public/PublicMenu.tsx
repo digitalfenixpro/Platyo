@@ -179,7 +179,7 @@ export const PublicMenu: React.FC = () => {
       {/*SE AGREGARON TODOS LOS SVG*/}
       
       <Pathleft color={primaryColor}
-        className="absolute top-40 left-0 w-[600px] h-[600px] pointer-events-none" 
+        className="absolute top-20 -left-1 w-[600px] h-[600px] pointer-events-none" 
         style={{
           opacity: 0.8, // antes estaba en className como opacity-80
           transform: 'translate(-20%, -20%)',
