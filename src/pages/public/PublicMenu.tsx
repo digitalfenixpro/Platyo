@@ -186,8 +186,7 @@ export const PublicMenu: React.FC = () => {
           borderBottomRightRadius: '50% 40%',
           borderTopRightRadius: '0% 0%',
         }}
-      >
-        
+      > 
       </Pathleft>
       <Pathbottom color={primaryColor} className="
           absolute 
