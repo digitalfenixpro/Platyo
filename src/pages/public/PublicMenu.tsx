@@ -178,9 +178,12 @@ export const PublicMenu: React.FC = () => {
       {/* DECORATIVE ORGANIC SHAPES - MATCHING REFERENCE */}
       {/*SE AGREGARON TODOS LOS SVG*/}
       
-      <Pathleft color={primaryColor}
-        className="absolute top-20 -left-1 w-[400px] h-[400px] pointer-events-none" 
-      > 
+      <Pathleft color={primaryColor} className="
+          absolute
+          top-20 -left-1 
+          w-[400px] h-[400px]
+          pointer-events-none
+        "> 
       </Pathleft>
       <Pathbottom color={primaryColor} className="
           absolute 
