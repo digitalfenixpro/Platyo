@@ -7,9 +7,9 @@ import { useCart } from '../../contexts/CartContext';
 import { ProductDetail } from '../../components/public/ProductDetail';
 import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
-import Pathtop from '../../components/public/Pathformtop.tsx';
-import Pathbottom from '../../components/public/Pathformbottom.tsx';
-import Pathleft from '../../components/public/Pathformleft.tsx';
+import Pathtop from '../../components/public/Pathformtop.tsx'; /*DF:componenetes pathform*/
+import Pathbottom from '../../components/public/Pathformbottom.tsx';/*DF:componenetes pathform*/
+import Pathleft from '../../components/public/Pathformleft.tsx';/*DF:componenetes pathform*/
 
 
 
@@ -183,8 +183,8 @@ export const PublicMenu: React.FC = () => {
           top-0
           left-0
           opacity-80
-          w-[250px] 
-          h-[700px]
+          w-[350px] 
+          h-[800px]
           pointer-events-none
         "> 
       </Pathleft>
