@@ -157,7 +157,7 @@ export const PublicMenu: React.FC = () => {
   return (
     
     <div
-      className="min-h-screen relative overflow-hidden"
+      className="min-h-auto relative overflow-hidden"
       style={{
         backgroundColor: menuBackgroundColor,
         '--primary-color': primaryColor,
