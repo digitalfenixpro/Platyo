@@ -411,7 +411,7 @@ export const PublicMenu: React.FC = () => {
       {/* FEATURED SECTION SLIDER */}
       {featuredProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 py-10 relative z-30">
-          <div className="text-center mb-8">
+          <div className="text-left mb-8">
             <p
               className="text-sm mb-2 opacity-70"
               style={{
@@ -430,7 +430,7 @@ export const PublicMenu: React.FC = () => {
             >
               destacados
             </h2>
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex items-left justify-center gap-1">
               {[1,2,3,4,5].map(i => (
                 <Star key={i} className="w-5 h-5 fill-current" style={{ color: secondaryColor }} />
               ))}
