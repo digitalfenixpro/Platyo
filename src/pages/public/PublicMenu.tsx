@@ -9,6 +9,7 @@ import { CartSidebar } from '../../components/public/CartSidebar';
 import { CheckoutModal } from '../../components/public/CheckoutModal';
 import Pathtop from '../../components/public/Pathformtop.tsx';
 import Pathbottom from '../../components/public/Pathformbottom.tsx';
+import Pathleft from '../../components/public/Pathformleft.tsx';
 
 
 
