@@ -1,6 +1,6 @@
 import * as React from "react"
 
-function Pathformtop(props) {
+function Pathformleft(props) {
   const { color } = props;
   return(
     <svg width="253" height="272" viewBox="0 0 253 272" fill={color} xmlns="http://www.w3.org/2000/svg"{...props}>
@@ -11,4 +11,4 @@ function Pathformtop(props) {
   
 }
 
-export default Pathformtop;
+export default Pathformleft;
