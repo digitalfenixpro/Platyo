@@ -185,6 +185,7 @@ export const PublicMenu: React.FC = () => {
           opacity-80
           w-[340px] 
           h-[800px]
+          translate-x-[25%]
           pointer-events-none
         "> 
       </Pathleft>
@@ -199,8 +200,15 @@ export const PublicMenu: React.FC = () => {
           sm:top-20 sm:right-0 sm:bottom-auto sm:left-auto sm:translate-x-[25%] sm:-translate-y-[25%]
         ">
       </Pathbottom>
-        
-      
+      <Pathtop color={primaryColor} className="
+          absolute
+          -bottom-1 -right-20
+          w-[250px] h-auto
+          opacity-80
+          pointer-events-none
+          rotate-45
+        ">
+      </Pathtop>
       
 
       
