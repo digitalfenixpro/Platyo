@@ -581,7 +581,7 @@ export const PublicMenu: React.FC = () => {
       {/* PRODUCTS LIST */}
       <main className="max-w-7xl mx-auto px-4 py-4 pb-24 relative z-10" id="products-section">
         {/* View Mode Selector */}
-        <div className="flex justify-end mb-6 gap-2">
+        <div className="flex justify-center mb-6 gap-2">
           <button
             onClick={() => setViewMode('list')}
             className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white shadow-md' : 'bg-white/50'}`}
