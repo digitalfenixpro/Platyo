@@ -75,15 +75,15 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
         <div className="overflow-y-auto" style={{ flex: 1 }}>
         {/* Product Image */}
         {product.images.length > 0 && (
-<div className="relative w-full" style={{ maxHeight: '380px', height: '350px' }}>
-  <img
-    src={product.images[0]}
-    alt={product.name}
-    className="w-full h-full object-cover"
-  />
-</div>
+        <div className="relative w-full" style={{ maxHeight: '380px', height: '350px' }}>
+          <img
+            src={product.images[0]}
+            alt={product.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
         )}
-
+        <div className="p-6">
           {/* Product Name */}
           <h2
             className="font-bold mb-3 text-center"
@@ -274,5 +274,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
         </div>
       </div>
     </div>
+      </div>
+
   );
 };
