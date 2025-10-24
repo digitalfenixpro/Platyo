@@ -57,6 +57,14 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
         }}
       >
         <div className="p-6">
+            {product.images.length > 0 && (
+            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-6">
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
           <div className="flex justify-between items-start mb-6">
             <button
               onClick={onClose}
@@ -66,14 +74,6 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             </button>
           </div>
 
-          {product.images.length > 0 && (
-            <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden mb-6">
-              <img
-                src={product.images[0]}
-                alt={product.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
           )}
              <h2
               className="font-bold"
