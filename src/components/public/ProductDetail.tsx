@@ -56,7 +56,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
           backgroundColor: cardBackgroundColor
         }}
       >
-        <div className="p-6">
+        <div className="relative p-6 pt-20">
 
         {product.images.length > 0 && (
           <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-3/4 aspect-video bg-gray-200 rounded-lg overflow-hidden shadow-lg">
