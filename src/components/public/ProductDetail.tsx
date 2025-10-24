@@ -49,21 +49,30 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
       <div
-        className="relative rounded-2xl shadow-2xl w-full max-w-3xl mt-20 mb-10 overflow-visible"
+        className="relative rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
         onClick={(e) => e.stopPropagation()}
         style={{
           backgroundColor: cardBackgroundColor,
+          maxHeight: '90vh',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}
       >
-        {/* Imagen centrada, sobresaliendo ligeramente */}
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+        >
+          <X className="w-5 h-5" style={{ color: primaryTextColor }} />
+        </button>
+
+        {/* Product Image */}
         {product.images.length > 0 && (
-          <div className="relative -top-12 mx-auto w-4/5 aspect-video rounded-xl overflow-hidden shadow-xl z-10">
+          <div className="relative w-full" style={{ height: '280px' }}>
             <img
               src={product.images[0]}
               alt={product.name}
@@ -72,39 +81,27 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
           </div>
         )}
 
-        {/* Contenido principal */}
-        <div className="relative p-6 pt-10 overflow-y-auto" style={{ flex: 1 }}>
-          {/* Botón de cierre dentro del contenedor */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors z-20"
-          >
-            <X className="w-5 h-5" style={{ color: primaryTextColor }} />
-          </button>
-
-          {/* Nombre del producto */}
+        {/* Content */}
+        <div className="p-6 overflow-y-auto" style={{ flex: 1 }}>
+          {/* Product Name */}
           <h2
-            className="font-bold mb-2 text-center"
+            className="font-bold mb-3 text-center"
             style={{
-              fontSize: '26px',
+              fontSize: '28px',
               color: primaryTextColor,
               fontFamily: theme.primary_font || 'Inter'
             }}
           >
             {product.name.split(' ').map((word, i) => (
               <span key={i}>
-                {i === 0 ? (
-                  <span style={{ color: primaryColor }}>{word}</span>
-                ) : (
-                  <span>{' ' + word}</span>
-                )}
+                {i === 0 ? <span style={{ color: primaryColor }}>{word}</span> : <span>{' ' + word}</span>}
               </span>
             ))}
           </h2>
 
-          {/* Descripción */}
+          {/* Description */}
           <p
-            className="text-center mb-5"
+            className="text-center mb-6"
             style={{
               fontSize: '14px',
               color: secondaryTextColor,
@@ -114,18 +111,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             {product.description}
           </p>
 
-          {/* Slider / Galería dentro del contenedor */}
-          {product.images.length > 1 && (
-            <div className="mb-6 overflow-x-auto flex gap-3 scrollbar-hide">
-              {product.images.map((img, index) => (
-                <div key={index} className="flex-shrink-0 w-40 h-28 rounded-lg overflow-hidden shadow-md">
-                  <img src={img} alt={`img-${index}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Variaciones */}
+          {/* Variations */}
           {product.variations.length > 0 && (
             <div className="mb-6">
               <h3
@@ -162,7 +148,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             </div>
           )}
 
-          {/* Ingredientes */}
+          {/* Ingredients */}
           {product.ingredients.length > 0 && (
             <div className="mb-6">
               <h3
@@ -217,7 +203,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
                 ))}
               </div>
 
-              {/* Botón agregar ingrediente */}
+              {/* Add Ingredient Link */}
               <button
                 className="mt-3 text-sm font-medium"
                 style={{ color: primaryColor }}
@@ -227,7 +213,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             </div>
           )}
 
-          {/* Cantidad y agregar al carrito */}
+          {/* Quantity and Add to Cart */}
           <div className="flex items-center justify-between gap-4 mt-6">
             <div className="flex items-center gap-3">
               <span
