@@ -71,7 +71,11 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
           <X className="w-5 h-5" style={{ color: primaryTextColor }} />
         </button>
 
-        {/* Product Image */}
+
+        {/* Content */}
+        <div className="p-6 overflow-y-auto" style={{ flex: 1 }}>
+          {/* Product Name */}
+                  {/* Product Image */}
         {product.images.length > 0 && (
 <div className="relative w-full" style={{ maxHeight: '380px', height: '350px' }}>
   <img
@@ -81,10 +85,6 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
   />
 </div>
         )}
-
-        {/* Content */}
-        <div className="p-6 overflow-y-auto" style={{ flex: 1 }}>
-          {/* Product Name */}
           <h2
             className="font-bold mb-3 text-center"
             style={{
