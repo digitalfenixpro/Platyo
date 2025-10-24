@@ -53,36 +53,38 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
       onClick={onClose}
     >
       <div
-        className="relative rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
+        className="relative rounded-2xl shadow-2xl w-full max-w-2xl overflow-visible"
         onClick={(e) => e.stopPropagation()}
         style={{
           backgroundColor: cardBackgroundColor,
           maxHeight: '90vh',
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
         }}
       >
-        {/* Close Button */}
+        {/* Contenedor superior con imagen superpuesta */}
+        {product.images.length > 0 && (
+          <div className="relative w-full flex justify-center">
+            <div className="absolute -top-24 w-4/5 aspect-video rounded-xl overflow-hidden shadow-xl">
+              <img
+                src={product.images[0]}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        )}
+
+        {/* Botón de cierre dentro del contenedor */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
+          className="absolute top-4 right-4 bg-white/90 rounded-full p-2 shadow-lg hover:bg-white transition-colors z-30"
         >
           <X className="w-5 h-5" style={{ color: primaryTextColor }} />
         </button>
 
-        {/* Product Image */}
-        {product.images.length > 0 && (
-          <div className="relative w-full" style={{ height: '280px' }}>
-            <img
-              src={product.images[0]}
-              alt={product.name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
-
-        {/* Content */}
-        <div className="p-6 overflow-y-auto" style={{ flex: 1 }}>
+        {/* Contenido */}
+        <div className="p-6 pt-32 overflow-y-auto" style={{ flex: 1 }}>
           {/* Product Name */}
           <h2
             className="font-bold mb-3 text-center"
@@ -94,7 +96,11 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
           >
             {product.name.split(' ').map((word, i) => (
               <span key={i}>
-                {i === 0 ? <span style={{ color: primaryColor }}>{word}</span> : <span>{' ' + word}</span>}
+                {i === 0 ? (
+                  <span style={{ color: primaryColor }}>{word}</span>
+                ) : (
+                  <span>{' ' + word}</span>
+                )}
               </span>
             ))}
           </h2>
