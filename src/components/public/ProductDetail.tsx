@@ -241,13 +241,13 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
                 </span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-8 h-8 rounded-full border flex items-center justify-center transition-colors hover:bg-gray-100"
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-gray-100"
                   style={{
-                    borderColor: primaryColor,
+                    border: `3px solid ${primaryColor}`,
                     color: primaryColor
                   }}
                 >
-                  <Plus className="w-4 h-4" />
+                  <Plus className="w-5 h-5" strokeWidth={3} />
                 </button>
               </div>
             </div>
