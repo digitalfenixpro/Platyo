@@ -72,7 +72,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
         </button>
 
         {/* Content */}
-        <div className="p-6 overflow-y-auto" style={{ flex: 1 }}>
+        <div className="overflow-y-auto" style={{ flex: 1 }}>
         {/* Product Image */}
         {product.images.length > 0 && (
 <div className="relative w-full" style={{ maxHeight: '380px', height: '350px' }}>
