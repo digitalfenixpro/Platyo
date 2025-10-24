@@ -204,13 +204,6 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
                 ))}
               </div>
 
-              {/* Add Ingredient Link */}
-              <button
-                className="mt-3 text-sm font-medium"
-                style={{ color: primaryColor }}
-              >
-                + Adicionar ingrediente
-              </button>
             </div>
           )}
 
@@ -259,6 +252,17 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
               </div>
             </div>
 
+            <button
+              onClick={handleAddToCart}
+              className="flex-1 px-6 py-3 text-white font-bold rounded-lg transition-all hover:opacity-90"
+              style={{
+                backgroundColor: primaryColor,
+                fontSize: '16px',
+                borderRadius: '8px'
+              }}
+            >
+              Agregar {formatCurrency(calculatePrice())}
+            </button>
           </div>
         </div>
       </div>
