@@ -220,16 +220,16 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
                 Cantidad:
               </span>
               <div className="flex items-center gap-2">
-<button
-  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-gray-100"
-  style={{
-    border: `3px solid ${primaryColor}`,
-    color: primaryColor
-  }}
->
-  <Minus className="w-4 h-4" />
-</button>
+                <button
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-colors hover:bg-gray-100"
+                  style={{
+                    border: `3px solid ${primaryColor}`,
+                    color: primaryColor
+                  }}
+                >
+                  <Minus className="w-5 h-5" strokeWidth={3} />
+                </button>
                 <span
                   className="font-bold w-8 text-center"
                   style={{
