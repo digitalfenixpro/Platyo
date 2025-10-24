@@ -58,16 +58,6 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
       >
         <div className="p-6">
           <div className="flex justify-between items-start mb-6">
-            <h2
-              className="font-bold"
-              style={{
-                fontSize: 'var(--font-size-title)',
-                fontFamily: 'var(--secondary-font)',
-                color: primaryTextColor
-              }}
-            >
-              {product.name}
-            </h2>
             <button
               onClick={onClose}
               className="text-gray-400 hover:text-gray-600 transition-colors"
@@ -85,6 +75,16 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
               />
             </div>
           )}
+             <h2
+              className="font-bold"
+              style={{
+                fontSize: 'var(--font-size-title)',
+                fontFamily: 'var(--secondary-font)',
+                color: primaryTextColor
+              }}
+            >
+              {product.name}
+            </h2>
 
           <p
             className="mb-6"
