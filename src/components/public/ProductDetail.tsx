@@ -52,16 +52,17 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
-      <div
-        className="relative rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-        style={{
-          backgroundColor: cardBackgroundColor,
-          maxHeight: '90vh',
-          display: 'flex',
-          flexDirection: 'column'
-        }}
-      >
+    <div
+      className="relative rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        backgroundColor: cardBackgroundColor,
+        maxWidth: '700px',
+        maxHeight: '90vh',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
         {/* Close Button */}
         <button
           onClick={onClose}
