@@ -73,7 +73,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
 
         {/* Product Image */}
         {product.images.length > 0 && (
-          <div className="relative w-full" style={{ height: '280px' }}>
+          <div className="relative w-full" style={{ height: 'auto' }}>
             <img
               src={product.images[0]}
               alt={product.name}
