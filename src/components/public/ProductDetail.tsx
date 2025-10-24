@@ -126,17 +126,17 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {product.variations.map(variation => (
-                  <button
-                    key={variation.id}
-                    onClick={() => setSelectedVariation(variation)}
-                    className="p-4 rounded-lg text-left transition-all border-2"
-                    style={{
-                      borderColor: selectedVariation.id === variation.id ? primaryColor : '#e5e7eb',
-                      backgroundColor: selectedVariation.id === variation.id ? primaryColor : 'transparent',
-                      color: selectedVariation.id === variation.id ? '#ffffff' : primaryTextColor,
-                      borderRadius: '8px'
-                    }}
-                  >
+<button
+  key={variation.id}
+  onClick={() => setSelectedVariation(variation)}
+  className="p-4 rounded-lg text-left transition-all border-2"
+  style={{
+    border: `2px solid ${selectedVariation.id === variation.id ? primaryColor + ' !important' : '#e5e7eb !important'}`,
+    backgroundColor: selectedVariation.id === variation.id ? primaryColor : 'transparent',
+    color: selectedVariation.id === variation.id ? '#ffffff' : primaryTextColor,
+    borderRadius: '8px'
+  }}
+>
                     <div className="font-semibold" style={{ fontSize: '14px', marginBottom: '4px' }}>
                       {variation.name}
                     </div>
