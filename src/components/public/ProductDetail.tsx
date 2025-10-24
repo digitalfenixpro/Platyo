@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Minus, Plus, X } from 'lucide-react';
+import { Minus, Plus, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Product, ProductVariation, Restaurant } from '../../types';
 import { useCart } from '../../contexts/CartContext';
 import { formatCurrency } from '../../utils/currencyUtils';
@@ -16,6 +16,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
     product.ingredients.filter(ing => !ing.optional).map(ing => ing.id)
   );
   const [quantity, setQuantity] = useState(1);
+  const [currentImage, setCurrentImage] = useState(0);
 
   const { addItem } = useCart();
 
@@ -47,23 +48,31 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
   const primaryTextColor = theme.primary_text_color || '#111827';
   const secondaryTextColor = theme.secondary_text_color || '#6b7280';
 
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % product.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + product.images.length) % product.images.length);
+  };
+
   return (
     <div
       className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
     >
-    <div
-      className="relative rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
-      onClick={(e) => e.stopPropagation()}
-      style={{
-        backgroundColor: cardBackgroundColor,
-        maxWidth: '700px',
-        maxHeight: '90vh',
-        display: 'flex',
-        flexDirection: 'column'
-      }}
-    >
-        {/* Close Button */}
+      <div
+        className="relative rounded-2xl shadow-2xl w-full overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          backgroundColor: cardBackgroundColor,
+          maxWidth: '700px',
+          maxHeight: '90vh',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
+        {/* Botón cerrar */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
@@ -71,20 +80,52 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
           <X className="w-5 h-5" style={{ color: primaryTextColor }} />
         </button>
 
-        {/* Product Image */}
+        {/* Slider de imágenes */}
         {product.images.length > 0 && (
           <div className="relative w-full" style={{ height: '280px' }}>
             <img
-              src={product.images[0]}
+              src={product.images[currentImage]}
               alt={product.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-all duration-300"
             />
+
+            {/* Botón anterior */}
+            {product.images.length > 1 && (
+              <button
+                onClick={prevImage}
+                className="absolute top-1/2 left-3 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow"
+              >
+                <ChevronLeft className="w-5 h-5 text-gray-700" />
+              </button>
+            )}
+
+            {/* Botón siguiente */}
+            {product.images.length > 1 && (
+              <button
+                onClick={nextImage}
+                className="absolute top-1/2 right-3 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow"
+              >
+                <ChevronRight className="w-5 h-5 text-gray-700" />
+              </button>
+            )}
+
+            {/* Indicadores inferiores */}
+            {product.images.length > 1 && (
+              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+                {product.images.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full transition-all ${i === currentImage ? 'bg-white' : 'bg-gray-400/60'}`}
+                  ></div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
-        {/* Content */}
+        {/* Contenido */}
         <div className="p-6 overflow-y-auto" style={{ flex: 1 }}>
-          {/* Product Name */}
+          {/* Nombre del producto */}
           <h2
             className="font-bold mb-3 text-center"
             style={{
@@ -100,7 +141,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             ))}
           </h2>
 
-          {/* Description */}
+          {/* Descripción */}
           <p
             className="text-center mb-6"
             style={{
@@ -112,7 +153,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             {product.description}
           </p>
 
-          {/* Variations */}
+          {/* Variaciones */}
           {product.variations.length > 0 && (
             <div className="mb-6">
               <h3
@@ -149,7 +190,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             </div>
           )}
 
-          {/* Ingredients */}
+          {/* Ingredientes */}
           {product.ingredients.length > 0 && (
             <div className="mb-6">
               <h3
@@ -204,7 +245,6 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
                 ))}
               </div>
 
-              {/* Add Ingredient Link */}
               <button
                 className="mt-3 text-sm font-medium"
                 style={{ color: primaryColor }}
@@ -214,7 +254,7 @@ export const ProductDetail: React.FC<ProductDetailProps> = ({ product, restauran
             </div>
           )}
 
-          {/* Quantity and Add to Cart */}
+          {/* Cantidad y agregar */}
           <div className="flex items-center justify-between gap-4 mt-6">
             <div className="flex items-center gap-3">
               <span
